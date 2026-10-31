@@ -32,7 +32,7 @@ Every metric in `02-metrics.md` is defined with all of these fields:
 | Owner | Who answers questions about it |
 | Traps | What has gone wrong with it before, or is likely to (see below) |
 
-A metric already defined in another domain's artifact (a support metric in `support-metrics.md`, a finance KPI) is referenced by that name and file, never redefined.
+A metric already defined in another domain's artifact (a support metric in `.singularskills/support/<project>/06-service-levels.md` or `07-health.md`, a finance KPI) is referenced by that name and file, never redefined.
 
 ## Metric trees and guardrails
 

@@ -29,11 +29,13 @@ The effect as an absolute and relative difference with a 95% confidence interval
 
 ## 4. Guardrails
 
+A significant harm to a guardrail blocks shipping even when the call is inconclusive for another reason (an early stop, a sample short of plan); the readout says so beside the call.
+
 Each guardrail metric's change with its interval. A significant harm to a guardrail blocks shipping regardless of the primary metric.
 
 ## 5. Base rates
 
-Most experiments do not improve their key metric; success rates of about 10–20% are common, and with that base rate a p < 0.05 "win" is a false positive far more often than 5% of the time (Kohavi et al., 2024, *KDD*: "False Positives in A/B Tests"). A surprising or very large effect gets a replication run before a launch.
+Most experiments do not improve their key metric; success rates of about 10–20% are common, and with that base rate a p < 0.05 "win" is a false positive far more often than 5% of the time (Kohavi and Chen, 2024, *KDD*: "False Positives in A/B Tests"; the per-company figures they report range from about 8% to about 33%). A surprising or very large effect gets a replication run before a launch.
 
 ## The call
 

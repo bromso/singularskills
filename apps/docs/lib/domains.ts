@@ -64,7 +64,7 @@ export const domains: Domain[] = [
 		methodology: "Decision Analytics Cycle",
 		colour: "sky",
 		icon: ChartColumn,
-		animatedIcon: "line-md:clipboard-list",
+		animatedIcon: "line-md:filter",
 		blurb:
 			"Decision-led analytics — questions, metrics, data checks, analysis, dashboards, and readouts.",
 		docsPath: "/docs/analytics",

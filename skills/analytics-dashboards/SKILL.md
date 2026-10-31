@@ -22,7 +22,7 @@ Specify the dashboards for "$ARGUMENTS": few tiles, each answering a question so
 
 Run this skill's gate before writing: `sh <this skill's folder>/scripts/gate.sh <project> <project root>`, where `<project root>` is the folder that contains `.singularskills/` (use `.` when you are already there). If it exits non-zero, stop and tell the user what it printed, unless `--skip-checks` was given (see Arguments). On a refusal, before you stop, append this line to `.singularskills/log.jsonl` (create the folder and file if missing): `{"ts":"<ISO timestamp>","skill":"analytics-dashboards","workflow":"analytics","phase":5,"project":"<project>","event":"refused","artifact":"05-dashboards.md","note":"<what the gate printed>"}`. Once the gate has passed, or under `--skip-checks` once you have appended the `skipped` line, append this line before you start work: `{"ts":"<ISO timestamp>","skill":"analytics-dashboards","workflow":"analytics","phase":5,"project":"<project>","event":"started","artifact":"05-dashboards.md","note":""}`.
 
-Read `.singularskills/analytics/<project>/02-metrics.md` for the metric names and definitions and `.singularskills/analytics/<project>/03-data.md` for which metrics are fit to show.
+Read `.singularskills/analytics/<project>/02-metrics.md` for the metric names and definitions and `.singularskills/analytics/<project>/03-data.md` for which metrics are fit to show. Read `.singularskills/analytics/<project>/01-questions.md` for the questions and audiences when it exists.
 
 ## Process
 

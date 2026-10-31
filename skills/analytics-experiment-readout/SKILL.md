@@ -15,7 +15,7 @@ Read out the finished test in "$ARGUMENTS" and make a call that can be trusted. 
 
 The results: a file path or a pasted table with, per arm, the users assigned and the outcome (conversions, or a mean and spread). When `$ARGUMENTS` or the request names a project, use that name as `<project>` whether or not its folder exists yet in `.singularskills/analytics/` (create it when you write). With no project named: with exactly one folder there, use it; with several, ask which; with no folder at all, ask for a project name.
 
-Read the test plan from the `## A/B Test:` section of `.singularskills/marketing/<project>/03-convert.md` when it exists: the planned split, primary metric, guardrails, planned sample size per arm and duration. Without a plan, ask once for those; with no answer, the planned split is unknown: say so, treat the sample size and duration as unknown, and never call the test invalid on an assumed split.
+Read the test plan from the `## A/B Test:` section of `.singularskills/marketing/<project>/03-convert.md` when it exists: the planned split, primary metric, guardrails, planned sample size per arm and duration. Without a plan, ask once for those; with no answer, the planned split is unknown: say so, treat the sample size and duration as unknown, and never call the test invalid on an assumed split. If the file has more than one `## A/B Test:` section, use the one whose name matches the test in the request or the results file; with several and no match, ask which.
 
 Append this line to `.singularskills/log.jsonl` before you write the readout (create the folder and file if missing): `{"ts":"<ISO timestamp>","skill":"analytics-experiment-readout","workflow":"analytics","phase":null,"project":"<project>","event":"started","artifact":"experiments/<date>-<slug>.md","note":""}`, where `<date>` is today as `YYYY-MM-DD` and `<slug>` is two to four words naming the test, never a person.
 
@@ -31,7 +31,7 @@ Append this line to `.singularskills/log.jsonl` before you write the readout (cr
 
 3. **Compute the primary metric's effect:** absolute and relative difference with a 95% confidence interval, the sample per arm and the p-value (two-proportion z-test for a conversion metric; Welch's t-test or a bootstrap for a mean), with a script written to `.singularskills/analytics/<project>/` and included beside the result. Scripts read the user's files where they keep them and write only aggregates (counts, sums, rates and intervals): no row-level data, names, emails or raw IDs go into any file under `.singularskills/`. Without a way to run code, report the raw rates per arm as `not computed` and make no significance claim.
 
-4. **Check the guardrails** the plan names, each with its change and interval. A significantly worse guardrail means **don't ship**.
+4. **Check the guardrails** the plan names, each with its change and interval. A significantly worse guardrail means **don't ship**, and blocks shipping even when the call is **inconclusive** for another reason: say so beside the call.
 
 5. **Weigh the base rate:** most tests do not move their primary metric, so a surprising or very large effect needs a replication run before launch; say so when it applies.
 
