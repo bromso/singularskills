@@ -32,4 +32,4 @@ Data, all synthetic:
 
 - **Run 1.** The run that used the skill failed all three judge votes on an answer that meets every criterion as written. The judge's reasons were not kept. The run that did not use the skill passed.
 - **The grader fix.** Grader 4 was ambiguous about a script the model wrote but could not run, and now says so explicitly.
-- **Run 2.** It shows the case does **not** separate the skill from plain Claude. With the seller's reasons and the buyer debriefs side by side in one file, plain Claude also declines the price cut. Redesigning the case so the buyer evidence is not laid out next to the seller's reasons is deferred to the follow-up, as was done for `support-reply`.
+- **Run 2.** In 2 runs per arm, the case did **not** separate the skill from plain Claude (n=2 proves neither separation nor its absence). With the seller's reasons and the buyer debriefs side by side in one file, plain Claude also declines the price cut. Redesigning the case so the buyer evidence is not laid out next to the seller's reasons is deferred to the follow-up, as was done for `support-reply`.
