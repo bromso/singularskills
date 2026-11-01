@@ -1,0 +1,27 @@
+{
+	"title": "Operations",
+	"description": "SLOs, alerting, runbooks, on-call and blameless incident reviews",
+	"icon": "Activity",
+	"root": true,
+	"pages": [
+		"index",
+		"---Phases---",
+		"service-inventory",
+		"slos",
+		"alerting",
+		"runbooks",
+		"on-call",
+		"reliability-review",
+		"---Memory---",
+		"artifacts",
+		"storage",
+		"---Examples---",
+		"examples",
+		"---Utilities---",
+		"incident-review",
+		"incident-response",
+		"alert-audit",
+		"error-budget",
+		"change-review"
+	]
+}

@@ -1,0 +1,47 @@
+---
+title: "Phase 3: Alerting"
+description: Alert on SLO burn rate, page or ticket, with a runbook for every page.
+command: "/ops-alerting <project>"
+kind: phase
+---
+
+## Purpose
+
+The Alerting phase pages only when users are hurting, using multiwindow, multi-burn-rate alerts on each SLO.
+
+## Usage
+
+**Example:**
+```
+/ops-alerting checkout
+```
+
+## Prerequisites
+
+Requires `.singularskills/ops/<project>/02-slos.md`. Use `--skip-checks` to bypass.
+
+## What It Does
+
+<Steps>
+<Step>Computes burn-rate alerts for each SLO's own target</Step>
+<Step>Adds symptom alerts only where no SLO covers a failure</Step>
+<Step>Sets page or ticket for every alert</Step>
+<Step>Writes rules in the recorded monitoring syntax, or plain conditions</Step>
+<Step>Names a runbook for every page</Step>
+</Steps>
+
+## Output
+
+<Output>
+Creates `.singularskills/ops/<project>/03-alerting.md` containing:
+
+- Burn-rate alerts
+- Symptom alerts
+- Rules
+- Existing alerts
+- Pages per shift
+</Output>
+
+## Next Phase
+
+<NextPhase href="/docs/ops/runbooks" title="Runbooks">After Alerting, continue with Runbooks.</NextPhase>

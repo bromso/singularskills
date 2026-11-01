@@ -1,0 +1,36 @@
+---
+title: Incident Response
+description: Guide a team through a live production incident, in the right order.
+command: "/ops-incident-response [project] <what is happening>"
+kind: utility
+---
+
+## Purpose
+
+The Incident Response skill sets the severity and roles and walks the first actions: recent changes first, stabilise before diagnosing.
+
+## Usage
+
+**Example:**
+```
+/ops-incident-response [project] <what is happening>
+```
+
+## Prerequisites
+
+What is happening; the runbooks and on-call setup when they exist.
+
+## What It Does
+
+<Steps>
+<Step>Declares and sets the severity</Step>
+<Step>Assigns commander, operations and communications</Step>
+<Step>Checks recent changes, follows the runbook, stabilises</Step>
+<Step>Keeps a timeline and an update cadence</Step>
+</Steps>
+
+## Output
+
+<Output>
+Returns the actions and next update time in chat. Writes no file.
+</Output>

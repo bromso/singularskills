@@ -1,4 +1,5 @@
 import {
+	Activity,
 	Bot,
 	Calculator,
 	ChartColumn,
@@ -32,7 +33,7 @@ export type Domain = {
 	animatedIcon: string;
 	blurb: string;
 	docsPath: string;
-	/** Homepage bento placement (`lib/site.ts#getBentoDomains`); order 1..20, size tiles at six columns per `BENTO_CELLS`. */
+	/** Homepage bento placement (`lib/site.ts#getBentoDomains`); order 1..21, size tiles at six columns per `BENTO_CELLS`. */
 	bento: { order: number; size: "wide" | "half" | "small" | "meta" };
 };
 
@@ -206,7 +207,19 @@ export const domains: Domain[] = [
 		animatedIcon: "line-md:cog",
 		blurb: "Run any workflow phase by phase; find, create and improve skills; report on a project.",
 		docsPath: "/docs/overview",
-		bento: { order: 20, size: "meta" },
+		bento: { order: 21, size: "meta" },
+	},
+	{
+		slug: "ops",
+		name: "Operations",
+		methodology: "Reliability Cycle",
+		colour: "sky",
+		icon: Activity,
+		animatedIcon: "line-md:speedometer",
+		blurb:
+			"Running production — inventory, SLOs, burn-rate alerting, runbooks, on-call, and blameless reviews.",
+		docsPath: "/docs/ops",
+		bento: { order: 17, size: "small" },
 	},
 	{
 		slug: "project-management",
@@ -217,7 +230,7 @@ export const domains: Domain[] = [
 		animatedIcon: "line-md:calendar",
 		blurb: "Sprint-based project management — initiate, plan, sprint, review, and improve.",
 		docsPath: "/docs/project-management",
-		bento: { order: 17, size: "half" },
+		bento: { order: 18, size: "small" },
 	},
 	{
 		slug: "research",
@@ -252,7 +265,7 @@ export const domains: Domain[] = [
 		blurb:
 			"One deal at a time — qualify, discover, propose, close, and learn why it was won or lost.",
 		docsPath: "/docs/sales",
-		bento: { order: 18, size: "small" },
+		bento: { order: 19, size: "small" },
 	},
 	{
 		slug: "support",
@@ -264,7 +277,7 @@ export const domains: Domain[] = [
 		blurb:
 			"Customer support from first contact to account health — map, categorise, answer, escalate, and review.",
 		docsPath: "/docs/support",
-		bento: { order: 19, size: "small" },
+		bento: { order: 20, size: "small" },
 	},
 ];
 

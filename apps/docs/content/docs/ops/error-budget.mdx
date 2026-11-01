@@ -1,0 +1,35 @@
+---
+title: Error Budget
+description: Calculate the budget and burn-rate thresholds for an SLO.
+command: "/ops-error-budget <target> <window>"
+kind: utility
+---
+
+## Purpose
+
+The Error Budget skill works out the budget in time and requests, each alert's threshold, and the time to exhaustion.
+
+## Usage
+
+**Example:**
+```
+/ops-error-budget <target> <window>
+```
+
+## Prerequisites
+
+The SLO target and window.
+
+## What It Does
+
+<Steps>
+<Step>Computes the budget</Step>
+<Step>Computes thresholds and budget consumed per alert window</Step>
+<Step>Computes time to exhaustion at a burn rate</Step>
+</Steps>
+
+## Output
+
+<Output>
+Returns the numbers and the script in chat. Writes no file.
+</Output>

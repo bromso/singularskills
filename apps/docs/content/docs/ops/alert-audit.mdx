@@ -1,0 +1,36 @@
+---
+title: Alert Audit
+description: Find which alerts earn their place, from an export.
+command: "/ops-alert-audit <alerts file>"
+kind: utility
+---
+
+## Purpose
+
+The Alert Audit skill computes each alert's actionable ratio and decides keep, tune, demote or delete.
+
+## Usage
+
+**Example:**
+```
+/ops-alert-audit <alerts file>
+```
+
+## Prerequisites
+
+An alert export with firings and actions taken.
+
+## What It Does
+
+<Steps>
+<Step>Computes firings, actionable ratio and after-hours share per alert</Step>
+<Step>Computes pages per shift against the target</Step>
+<Step>Decides each alert</Step>
+<Step>Flags pages with no runbook</Step>
+</Steps>
+
+## Output
+
+<Output>
+Creates `.singularskills/ops/<project>/alerts/<date>-<slug>.md`.
+</Output>

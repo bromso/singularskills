@@ -1,0 +1,48 @@
+---
+title: "Phase 1: Inventory"
+description: Map the services, owners, journeys, dependencies, tiers and tooling.
+command: "/ops-service-inventory <project>"
+kind: phase
+---
+
+## Purpose
+
+The Inventory phase draws the picture reliability work starts from, including the monitoring, paging and deploy tooling later phases write for.
+
+## Usage
+
+**Example:**
+```
+/ops-service-inventory checkout
+```
+
+## Prerequisites
+
+None — this is the first phase.
+
+## What It Does
+
+<Steps>
+<Step>Lists services, owners, users and critical journeys</Step>
+<Step>Maps the dependencies that could take each down</Step>
+<Step>Sets a criticality tier per service</Step>
+<Step>Records the current monitoring, alerting, on-call and deploy state</Step>
+<Step>Records the tooling, from the project's Stack section or by asking once</Step>
+</Steps>
+
+## Output
+
+<Output>
+Creates `.singularskills/ops/<project>/01-inventory.md` containing:
+
+- Services
+- Critical journeys
+- Dependencies
+- Tiers
+- Current state
+- Tooling
+</Output>
+
+## Next Phase
+
+<NextPhase href="/docs/ops/slos" title="SLOs">After Inventory, continue with SLOs.</NextPhase>

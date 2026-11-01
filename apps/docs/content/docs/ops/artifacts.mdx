@@ -1,0 +1,31 @@
+---
+title: Artifacts
+description: What each Operations phase produces and the purpose of each artifact.
+kind: overview
+---
+
+## Phase Artifacts
+
+| Phase | File | What It Contains |
+|-------|------|-----------------|
+| Inventory | `01-inventory.md` | Services, critical journeys, dependencies, tiers, current state, tooling |
+| SLOs | `02-slos.md` | SLIs, SLOs, error budgets, the error budget policy and who agreed it |
+| Alerting | `03-alerting.md` | Burn-rate alerts, symptom alerts, rules, existing alerts, pages per shift |
+| Runbooks | `04-runbooks.md` | One checklist per paging alert and common incident type |
+| On-call | `05-on-call.md` | Rotation, handoff checklist, severities, roles, escalation, load limits |
+| Review | `06-review.md` | Attainment and budget, policy actions, alert health, incidents and follow-up |
+
+Re-running the review first keeps the previous file as `06-review-<date>.md`.
+
+## Utility Artifacts
+
+| Skill | File | What It Contains |
+|-------|------|-----------------|
+| Incident Review | `incidents/<date>-<slug>.md` | Impact, timeline, contributing factors, where the system misled the responders, action items |
+| Alert Audit | `alerts/<date>-<slug>.md` | Per-alert actionable ratio and decision, load, missing runbooks |
+
+`/ops-incident-response`, `/ops-error-budget` and `/ops-change-review` write no file.
+
+## People
+
+Incident reviews name people by role, never by name. Inventories name owning teams, not individuals' contact details.

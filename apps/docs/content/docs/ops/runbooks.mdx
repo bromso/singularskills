@@ -1,0 +1,43 @@
+---
+title: "Phase 4: Runbooks"
+description: Write checklists the person paged can follow, with production-changing steps marked.
+command: "/ops-runbooks <project>"
+kind: phase
+---
+
+## Purpose
+
+The Runbooks phase writes one checklist per paging alert: is this real, mitigations, escalate.
+
+## Usage
+
+**Example:**
+```
+/ops-runbooks checkout
+```
+
+## Prerequisites
+
+Requires `.singularskills/ops/<project>/03-alerting.md`. Use `--skip-checks` to bypass.
+
+## What It Does
+
+<Steps>
+<Step>Writes one runbook per paging alert and common incident type</Step>
+<Step>Gives every command its expected output, impact and rollback</Step>
+<Step>Marks every step that changes production</Step>
+<Step>Marks unknown commands as command to fill in, never invented</Step>
+<Step>Marks runbooks as drafts until exercised</Step>
+</Steps>
+
+## Output
+
+<Output>
+Creates `.singularskills/ops/<project>/04-runbooks.md` containing:
+
+- One section per runbook
+</Output>
+
+## Next Phase
+
+<NextPhase href="/docs/ops/on-call" title="On-call">After Runbooks, continue with On-call.</NextPhase>

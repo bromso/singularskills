@@ -1,0 +1,48 @@
+---
+title: "Phase 6: Review"
+description: Review SLO attainment, budget, alerts, pages and incident follow-up over a period.
+command: "/ops-reliability-review <project>"
+kind: phase
+---
+
+## Purpose
+
+The Review phase checks how reliable the service was and states what the error budget policy says to do now.
+
+## Usage
+
+**Example:**
+```
+/ops-reliability-review checkout
+```
+
+## Prerequisites
+
+Requires `.singularskills/ops/<project>/02-slos.md`. Use `--skip-checks` to bypass.
+
+## What It Does
+
+<Steps>
+<Step>Computes attainment and budget consumed per SLO</Step>
+<Step>States the policy action, such as a freeze</Step>
+<Step>Computes alert actionable ratio and pages per shift</Step>
+<Step>Tracks incidents and their action items</Step>
+<Step>Compares with the last review, keeping it by date</Step>
+</Steps>
+
+## Output
+
+<Output>
+Creates `.singularskills/ops/<project>/06-review.md` containing:
+
+- Period
+- SLOs and budgets
+- Policy actions
+- Alerts and on-call
+- Incidents and action items
+- Compared with last review
+</Output>
+
+## Next Step
+
+Run the review regularly; after each incident, write it up with `/ops-incident-review`.
