@@ -21,7 +21,7 @@ Append this line to `.singularskills/log.jsonl` before you write the review (cre
 
 1. **Check it is not a security incident.** If the record shows signs of a breach (unauthorised access, exposed data, an attacker), stop and point the user to `/security-incident-response`.
 
-2. **People by role, never by name,** even when the user or the record names them: "the deploying engineer", "the on-call engineer", "the incident commander". Rewrite names to roles everywhere in the review.
+2. **People by role, never by name,** even when the user or the record names them: "the deploying engineer", "the on-call engineer", "the incident commander". Rewrite names to roles everywhere: in the review and in your reply to the user, including when you explain that the review is blameless (say "the deploying engineer", not the person's name).
 
 3. **Impact:** how long users were affected, which journeys, roughly how many users, and the error budget consumed, each `computed` from the record with a script written to `.singularskills/ops/<project>/` and included beside the result, or `not measured`. Scripts read the user's files where they keep them and write results under `.singularskills/`.
 
@@ -39,7 +39,7 @@ Append this line to `.singularskills/log.jsonl` before you write the review (cre
 
 ## Output
 
-The review written to `.singularskills/ops/<project>/incidents/<date>-<slug>.md`. Present the contributing factors and the action items first, with their owners.
+The review written to `.singularskills/ops/<project>/incidents/<date>-<slug>.md`. Present the contributing factors and the action items first, with their owners. Name nobody in the reply either: people by role only.
 
 After you have written the review, append the `started` line of Prerequisites to `.singularskills/log.jsonl` with `"event":"finished"`: `{"ts":"<ISO timestamp>","skill":"ops-incident-review","workflow":"ops","phase":null,"project":"<project>","event":"finished","artifact":"incidents/<date>-<slug>.md","note":""}`.
 
