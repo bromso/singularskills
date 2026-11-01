@@ -262,8 +262,13 @@ As in `ai` and `analytics`:
   - Vendor statistics labelled as such.
 
 Citations give author, year and venue, or title and URL for web sources.
-Context7 was checked and has no sales-methodology sources worth citing; the
-references rely on the research and practitioner sources above.
+Context7 holds no sales-methodology sources worth citing. It does list prior
+art: *Sales Skills* (`louisblythe/sales-skills`), a library of 122 standalone
+sales skills for Claude Code. Many of them are for building AI sales bots,
+alongside call scripts, question lists and objection answers. This domain
+differs on purpose: a gated workflow per deal, every buyer fact labelled known,
+assumed or unknown, and win-loss that keeps the seller's view apart from the
+buyer's. None of that pack's text is used.
 
 ## 7. Pack wiring
 
