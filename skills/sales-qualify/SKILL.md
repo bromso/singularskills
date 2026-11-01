@@ -28,7 +28,7 @@ None — this is the first phase.
 
 ## Process
 
-1. **Find the ideal customer profile:** the newest file in `.singularskills/sales/playbook/icp/` when it exists; else the customer research in the seller's own marketing project in `.singularskills/marketing/*/` (marketing projects are named after the seller's product or company, not the buyer: with exactly one folder there, use it; with several, ask once which is the seller's); else ask the user, once, who their best customers are.
+1. **Find the ideal customer profile:** the newest file in any `.singularskills/sales/*/icp/` folder (usually `playbook/icp/`) when one exists; else the customer research in the seller's own marketing project in `.singularskills/marketing/*/` (marketing projects are named after the seller's product or company, not the buyer: with exactly one folder there, use it; with several, ask once which is the seller's); else ask the user, once, who their best customers are.
 
 2. **Gather what is known** from the user's notes, emails, CRM record or the conversation, and ask once, together, for anything missing: who the buyer is, how the deal started, who they have spoken to, and what the buyer has said they want.
 

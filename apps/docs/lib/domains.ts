@@ -32,7 +32,7 @@ export type Domain = {
 	animatedIcon: string;
 	blurb: string;
 	docsPath: string;
-	/** Homepage bento placement (`lib/site.ts#getBentoDomains`); order 1..16, size tiles at six columns per `BENTO_CELLS`. */
+	/** Homepage bento placement (`lib/site.ts#getBentoDomains`); order 1..20, size tiles at six columns per `BENTO_CELLS`. */
 	bento: { order: number; size: "wide" | "half" | "small" | "meta" };
 };
 
