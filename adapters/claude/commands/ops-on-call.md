@@ -1,0 +1,6 @@
+---
+description: "Set up on-call for a service — the rotation, primary and secondary, the handoff checklist, severity levels, incident roles, the escalation path, and load limits on pages per shift with recovery after a heavy one. Use when a team is starting on-call or its current rotation is burning people out. Not for a security incident response plan; see /security-incident-response."
+argument-hint: "[project] [--skip-checks]"
+---
+
+Use the `ops-on-call` skill with these arguments: $ARGUMENTS

@@ -1,0 +1,6 @@
+---
+description: "Design alerting for a service — multiwindow, multi-burn-rate alerts on each SLO, symptom alerts only where no SLO covers a user-facing failure, page or ticket for every alert, and a runbook named for every page, written in the service's monitoring syntax. Use when a team pages too often, too late, or on the wrong things. Not for security event alerting; see /security-monitoring-strategy."
+argument-hint: "[project] [--skip-checks]"
+---
+
+Use the `ops-alerting` skill with these arguments: $ARGUMENTS

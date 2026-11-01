@@ -1,0 +1,6 @@
+---
+description: "Map a production system for reliability work — its services, owners, users and critical journeys, dependencies, criticality tiers, and the current monitoring, alerting, on-call and deploy state, with the tooling recorded for later steps. Use when a team wants more reliable services and first needs a picture of what it runs. Not for a security asset inventory; see /security-monitoring-strategy."
+argument-hint: "[project] [--skip-checks]"
+---
+
+Use the `ops-service-inventory` skill with these arguments: $ARGUMENTS

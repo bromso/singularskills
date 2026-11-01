@@ -342,7 +342,7 @@ describe("fix-skill-text: the handoff paragraph", () => {
 	test("matches the validator's handoffParagraph for every member of the real pack", () => {
 		const real = loadWorkflows(path.join(repoRoot, "workflows"));
 		const members = memberships(real);
-		expect(members.size).toBe(245);
+		expect(members.size).toBe(251);
 		for (const m of members.values()) {
 			expect(handoffParagraph(m), m.name).toBe(
 				validatorHandoff({
@@ -577,7 +577,7 @@ describe("fix-skill-text: the recall step", () => {
 			const shared = m.phase.skills.length > 1 && !m.phase.artifact?.endsWith("/");
 			expect(recallStep(shared), m.name).toBe(validatorRecall(shared));
 		}
-		expect(count).toBe(37);
+		expect(count).toBe(38);
 	});
 });
 

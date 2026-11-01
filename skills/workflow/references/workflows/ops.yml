@@ -1,0 +1,34 @@
+name: ops
+title: Reliability Cycle
+folder: ops
+phases:
+  - phase: 1
+    title: Inventory
+    artifact: 01-inventory.md
+    requires: []
+    skills: [ops-service-inventory]
+  - phase: 2
+    title: SLOs
+    artifact: 02-slos.md
+    requires: [01-inventory.md]
+    skills: [ops-slos]
+  - phase: 3
+    title: Alerting
+    artifact: 03-alerting.md
+    requires: [02-slos.md]
+    skills: [ops-alerting]
+  - phase: 4
+    title: Runbooks
+    artifact: 04-runbooks.md
+    requires: [03-alerting.md]
+    skills: [ops-runbooks]
+  - phase: 5
+    title: On-call
+    artifact: 05-on-call.md
+    requires: [03-alerting.md, 04-runbooks.md]
+    skills: [ops-on-call]
+  - phase: 6
+    title: Review
+    artifact: 06-review.md
+    requires: [02-slos.md]
+    skills: [ops-reliability-review]
