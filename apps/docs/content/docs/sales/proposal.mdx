@@ -1,0 +1,44 @@
+---
+title: "Phase 4: Proposal"
+description: Draft the proposal with options priced from your policy; anything beyond it is marked for approval.
+command: "/sales-proposal <deal>"
+kind: phase
+---
+
+## Purpose
+
+The Proposal phase drafts what the buyer receives, opening with their situation in their words.
+
+## Usage
+
+**Example:**
+```
+/sales-proposal northwind
+```
+
+## Prerequisites
+
+Requires `.singularskills/sales/<deal>/02-discovery.md` and `03-solution.md`. Use `--skip-checks` to bypass.
+
+## What It Does
+
+<Steps>
+<Step>Gets the pricing and discount policy</Step>
+<Step>Opens with the buyer's situation</Step>
+<Step>Sets scope and outcomes tied to their metrics</Step>
+<Step>Offers two or three options within policy</Step>
+<Step>Marks anything beyond policy for approval</Step>
+</Steps>
+
+## Output
+
+<Output>
+Creates `.singularskills/sales/<deal>/04-proposal.md` containing:
+
+- Proposal draft
+- For approval
+</Output>
+
+## Next Phase
+
+<NextPhase href="/docs/sales/close-plan" title="Close plan">After Proposal, continue with Close plan.</NextPhase>

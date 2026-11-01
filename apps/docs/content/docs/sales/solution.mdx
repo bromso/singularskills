@@ -1,0 +1,45 @@
+---
+title: "Phase 3: Solution"
+description: Build the value case from the buyer's own numbers and plan the proof per stakeholder.
+command: "/sales-solution <deal>"
+kind: phase
+---
+
+## Purpose
+
+The Solution phase shows why the deal is worth it to the buyer, computing value only from their numbers.
+
+## Usage
+
+**Example:**
+```
+/sales-solution northwind
+```
+
+## Prerequisites
+
+Requires `.singularskills/sales/<deal>/02-discovery.md`. Use `--skip-checks` to bypass.
+
+## What It Does
+
+<Steps>
+<Step>Maps each pain to what addresses it</Step>
+<Step>Computes the value case from the buyer's metrics, or labels it an illustration</Step>
+<Step>Plans what each stakeholder needs to see</Step>
+<Step>States the fit gaps honestly</Step>
+</Steps>
+
+## Output
+
+<Output>
+Creates `.singularskills/sales/<deal>/03-solution.md` containing:
+
+- Pains to capabilities
+- Value case
+- Proof plan
+- Fit gaps
+</Output>
+
+## Next Phase
+
+<NextPhase href="/docs/sales/proposal" title="Proposal">After Solution, continue with Proposal.</NextPhase>

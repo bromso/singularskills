@@ -1,0 +1,47 @@
+---
+title: "Phase 5: Close plan"
+description: Agree the steps to go-live with the buyer, with legal, security and procurement in parallel.
+command: "/sales-close-plan <deal>"
+kind: phase
+---
+
+## Purpose
+
+The Close plan phase writes a mutual action plan worked back from the buyer's go-live date.
+
+## Usage
+
+**Example:**
+```
+/sales-close-plan northwind
+```
+
+## Prerequisites
+
+Requires `.singularskills/sales/<deal>/04-proposal.md`. Use `--skip-checks` to bypass.
+
+## What It Does
+
+<Steps>
+<Step>Starts from the buyer's go-live date</Step>
+<Step>Works back with an owner on each side for every step</Step>
+<Step>Runs the paper process in parallel</Step>
+<Step>Names the risks to the date</Step>
+<Step>Writes the give-get list within policy</Step>
+</Steps>
+
+## Output
+
+<Output>
+Creates `.singularskills/sales/<deal>/05-close.md` containing:
+
+- Go-live date
+- Mutual action plan
+- Paper process
+- Risks
+- Give-get
+</Output>
+
+## Next Step
+
+When the deal closes, won or lost, review it with `/sales-deal-review`.

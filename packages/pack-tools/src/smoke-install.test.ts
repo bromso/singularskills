@@ -29,6 +29,6 @@ describe.skipIf(process.env.SKIP_NETWORK_TESTS === "1")("smoke-install.sh", () =
 	it("installs the pack for Codex from the local checkout and the gate fixture passes", async () => {
 		const result = await run(["--local", "--agent", "codex"]);
 		expect(result.status, result.stderr).toBe(0);
-		expect(result.stdout).toContain("codex: 315 skills, gate ok");
+		expect(result.stdout).toContain("codex: 327 skills, gate ok");
 	}, 300_000);
 });

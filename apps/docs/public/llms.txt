@@ -1,6 +1,6 @@
 # singularskills
 
-> Structured, repeatable workflows for digital production domains. 315 skills across 19 domains, in one pack of agent skills.
+> Structured, repeatable workflows for digital production domains. 327 skills across 20 domains, in one pack of agent skills.
 
 ## Overview
 
@@ -25,6 +25,7 @@ Skill names are `<domain>-<skill>`, for example `design-empathize`.
 - AI Product: AI Feature Lifecycle (define, approach, prompt-design, experience, build, evaluate, ship, monitor, plus prompt-review, red-team, judge-check, model-compare)
 - Development: Dev Workflow (plan, build, test, debug, review, ship)
 - Marketing: RACE Framework (strategy, reach, act, convert, engage)
+- Sales: Deal Cycle (qualify, discovery, solution, proposal, close-plan, deal-review, plus icp, call-prep, follow-up, objection, pipeline-review, win-loss)
 - Branding: Brand Lifecycle (discover, strategy, verbal, visual, guidelines, audit)
 - Accessibility: WCAG-EM (scope, evaluate, report, remediate, retest, checklist)
 - Project Management: Scrum (initiate, plan, sprint, review, improve)
