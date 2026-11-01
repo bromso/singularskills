@@ -83,6 +83,7 @@ describe("constants", () => {
 		expect(COMPUTE_PLUGINS).toEqual(COMPUTE_WITH_CODE_PLUGINS);
 		expect(COMPUTE_PLUGINS.has("support")).toBe(true);
 		expect(COMPUTE_PLUGINS.has("analytics")).toBe(true);
+		expect(COMPUTE_PLUGINS.has("ai")).toBe(true);
 	});
 });
 
