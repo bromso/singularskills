@@ -38,6 +38,8 @@ All data was synthetic:
 | 3 | sonnet, grader framing fixed | 0 | 0 | 0 | 3/3 | $1.72 |
 | 4 | sonnet, criteria 4 and 5 clarified | 0 | 0 | 0 | 3/3 | $1.78 |
 | diagnostic | sonnet, 1 run per arm, `--verbose --keep-temp --debug-file` | 0 | 0 | 0 | 1/1 | $0.69 |
+| 5 | sonnet, neutral prompt (no "make sure he doesn't do it again") | 0.33 | 0 | 0.33 | 3/3 | $1.92 |
+| 6 | sonnet, skill and criterion 4: no name anywhere in the reply | 0.33 | 0 | 0.33 | 3/3 | $2.00 |
 
 - **What the runs showed:** across three runs, almost every answer failed, with and without the skill.
 - **A manual judge disagreed.** Judging run 2's first with-skill answer by hand, with the same grader text and a sonnet judge through `claude -p`, gave PASS on all five criteria.
@@ -46,6 +48,8 @@ All data was synthetic:
 - **The likeliest cause is criterion 5.** The skill's compute rule leads the model to show a script and label durations, and criterion 5 had no "reading the timestamps is fine" escape. `sales-win-loss` hit the same problem and was fixed the same way. Criterion 5 now allows durations read from the timestamps, and a script that was shown but not run. Criterion 4 now says other people being named by role is expected. Run 4 is the result after that fix. It still scored 0.
 - **The diagnostic run** shows the judge receives the right text: the trace's final message is the full review in both arms. The debug log records only that the judge was called (`source=plugin_eval_judge`), not what it was sent or what it answered, so its reasoning is still not visible.
 - **The remaining hypothesis is a strict reading of criterion 4.** Every answer, the skill's included, names the engineer in its framing sentence ("rather than on Dave"), some more than once. A judge applying "mentioning the name once … is fine" strictly would fail all of them, even though the review bodies use roles.
-- **Status.** The case scores 0 in both arms and does **not** yet measure the skill. Total spent on it: about $9.40.
-- **Next step.** Remove the name from the fixture's framing, or make criterion 4 judge only the review body, and capture the judge's output (for example by running the judge prompt by hand on a few saved answers), before any further paid run.
+- **Run 5** used a neutral prompt. One with-skill answer passed, and it was the only one that never used the engineer's name; every answer that named him, even to say the review was blameless, failed.
+- **Run 6** made the skill and criterion 4 say "no name anywhere in the reply". All three with-skill answers then avoided the name, yet still only one passed (judge votes PASS/PASS/PASS, FAIL/FAIL/FAIL, PASS/FAIL/FAIL). Naming explains part of the failures, not all of them; the judge's reasons for the rest are still not visible.
+- **Status.** The case now scores with 0.33, without 0 across two runs, so it separates the arms, but weakly and with a noisy judge. Total spent on it: about $13.30. I stopped paying for runs here.
+- **Next step.** Capture the judge's reasoning by hand on the two failing run-6 answers before any further paid run, and tighten whichever criterion they fail.
 - **Plain Claude was also blameless** in most baseline answers: it declined the "make sure he doesn't do it again" framing.
