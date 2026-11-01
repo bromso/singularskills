@@ -32,7 +32,7 @@ Append this line to `.singularskills/log.jsonl` before you write the check (crea
 
 2. **Compute the rates:** agreement (a + d) ÷ all; true-positive rate a ÷ (a + c); true-negative rate d ÷ (b + d). **Without a way to run code**, show the four cell counts, label every rate `not computed`, and judge from the counts: for example, "the judge passed 6 of the 7 outputs people failed".
 
-3. **Check there are enough labels:** with fewer than 10 human-labelled fails, or fewer than 30 labelled rows, there are **too few** labels to judge the judge either way. Say so, give the counts, and ask for more labels; do not approve the judge.
+3. **Check there are enough labels:** with fewer than 10 human-labelled fails, or fewer than 30 labelled rows, there are **too few** labels to approve the judge. Say so, give the counts, and ask for more labels. Too few labels stops you approving a judge, never rejecting one: if the judge already passed more than half of the outputs people failed, the verdict is **do not trust**, whatever the label count.
 
 4. **Judge the judge** on the true-negative rate first, then the true-positive rate:
    - **trust** — it catches the failures people catch (true-negative rate high) and rarely rejects good outputs

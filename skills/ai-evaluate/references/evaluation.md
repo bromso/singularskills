@@ -40,7 +40,7 @@ An AI judge is only useful if it agrees with the people who know what good looks
 
 Agreement alone misleads when most outputs pass. Example: 90 human passes and 10 human fails, and a judge that passes everything. Agreement is 90%, and the true-negative rate is 0%: the judge catches none of the failures it exists to catch. Judge the judge on the true-negative rate first.
 
-**Too few to judge.** With fewer than 10 human-labelled fails, or fewer than 30 labelled rows, the rates are too unstable to trust either way; say "too few labels to judge the judge" and ask for more. (Threshold: the pack's call, a common rule of thumb.)
+**Too few to judge.** With fewer than 10 human-labelled fails, or fewer than 30 labelled rows, the rates are too unstable to approve the judge; say "too few labels" and ask for more. Too few labels blocks approval, never rejection: a judge that already passed more than half of the outputs people failed is not trusted, however few labels there are. (Threshold: the pack's call, a common rule of thumb.)
 
 Re-check the judge against fresh human labels after any change to its prompt or model, and on a schedule (quarterly is common). Never invent human labels.
 
