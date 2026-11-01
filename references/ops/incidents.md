@@ -24,7 +24,7 @@ Architecture background goes last. A runbook nobody has run is a draft: say when
 
 ## The blameless review
 
-A blameless review looks for systemic contributing factors, assumes people acted well on the information they had, and asks where the system **misled** the operator or asked too much of them (Google SRE Book, *Postmortem Culture*, https://sre.google/sre-book/postmortem-culture).
+A blameless review looks for systemic contributing factors, assumes people acted well on the information they had, and asks how the system can **mislead** an operator: where it misled this one, or asked too much of them (Google SRE Book, *Postmortem Culture*, https://sre.google/sre-book/postmortem-culture).
 
 - **People by role,** never by name: "the on-call engineer", "the deploying engineer".
 - **Contributing factors, not one root cause.** Incidents have several causes; single-cause reasoning hides systemic contributors (Okwesa, 2026, *International Journal of Social Sciences and Management Research*: "Root-Cause and Thematic Analysis for Major Incident Management: A Review").
