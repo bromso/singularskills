@@ -22,11 +22,11 @@ Draft the proposal for "$ARGUMENTS": the buyer's situation, what they get, what 
 
 Run this skill's gate before writing: `sh <this skill's folder>/scripts/gate.sh <project> <project root>`, where `<project root>` is the folder that contains `.singularskills/` (use `.` when you are already there). If it exits non-zero, stop and tell the user what it printed, unless `--skip-checks` was given (see Arguments). On a refusal, before you stop, append this line to `.singularskills/log.jsonl` (create the folder and file if missing): `{"ts":"<ISO timestamp>","skill":"sales-proposal","workflow":"sales","phase":4,"project":"<project>","event":"refused","artifact":"04-proposal.md","note":"<what the gate printed>"}`. Once the gate has passed, or under `--skip-checks` once you have appended the `skipped` line, append this line before you start work: `{"ts":"<ISO timestamp>","skill":"sales-proposal","workflow":"sales","phase":4,"project":"<project>","event":"started","artifact":"04-proposal.md","note":""}`.
 
-Read `.singularskills/sales/<deal>/02-discovery.md` for the buyer's situation and `.singularskills/sales/<deal>/03-solution.md` for the value case and fit.
+Read `.singularskills/sales/<project>/02-discovery.md` for the buyer's situation and `.singularskills/sales/<project>/03-solution.md` for the value case and fit.
 
 ## Process
 
-1. **Get the pricing policy:** list prices, the discount the seller may give without approval, who approves more, and standard terms. Ask once if not given; read `.singularskills/marketing/<deal>/` for pricing work when it exists. Never invent a price.
+1. **Get the pricing policy:** list prices, the discount the seller may give without approval, who approves more, and standard terms. Ask once if not given; read the seller's own marketing project in `.singularskills/marketing/*/` (marketing projects are named after the seller's product or company, not the buyer: with exactly one folder there, use it; with several, ask once which is the seller's) for pricing work when it exists. Never invent a price.
 
 2. **Open with the buyer's situation,** in their words from `02-discovery.md`, so the buyer recognises their problem.
 
@@ -40,11 +40,11 @@ Read `.singularskills/sales/<deal>/02-discovery.md` for the buyer's situation an
 
 7. **Honest selling.** No false urgency, no fake scarcity, no misrepresentation of the product or a competitor, and no commitment (discount, term, date, feature) beyond the policy the user stated; anything beyond it is marked **for approval**, with who approves.
 
-8. **Write the artifact** to `.singularskills/sales/<deal>/04-proposal.md` with the proposal draft and, after it, an internal section **For approval** listing anything beyond policy.
+8. **Write the artifact** to `.singularskills/sales/<project>/04-proposal.md` with the proposal draft and, after it, an internal section **For approval** listing anything beyond policy.
 
 ## Output
 
-The proposal written to `.singularskills/sales/<deal>/04-proposal.md`. Present a summary to the user highlighting:
+The proposal written to `.singularskills/sales/<project>/04-proposal.md`. Present a summary to the user highlighting:
 - The options and their prices
 - Anything marked for approval, and who approves
 - The next steps proposed to the buyer

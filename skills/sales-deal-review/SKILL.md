@@ -22,7 +22,7 @@ Learn from the closed deal in "$ARGUMENTS", as `references/win-loss.md` describe
 
 Before you start work, append this line to `.singularskills/log.jsonl` (create the folder and file if missing): `{"ts":"<ISO timestamp>","skill":"sales-deal-review","workflow":"sales","phase":6,"project":"<project>","event":"started","artifact":"06-review.md","note":""}`.
 
-None required: a deal can end at any phase, and many deals worth reviewing never went through this workflow. Read whichever of `.singularskills/sales/<deal>/01-qualify.md` to `05-close.md` exist.
+None required: a deal can end at any phase, and many deals worth reviewing never went through this workflow. Read whichever of `.singularskills/sales/<project>/01-qualify.md` to `05-close.md` exist.
 
 ## Process
 
@@ -38,11 +38,11 @@ None required: a deal can end at any phase, and many deals worth reviewing never
 
 6. **What to repeat and what to change,** each with an owner.
 
-7. **Write the artifact** to `.singularskills/sales/<deal>/06-review.md` with sections **Outcome**, **Seller's account**, **Buyer's account** (or **no buyer input**), **Causes**, **Against the plan** and **Lessons**.
+7. **Write the artifact** to `.singularskills/sales/<project>/06-review.md` with sections **Outcome**, **Seller's account**, **Buyer's account** (or **no buyer input**), **Causes**, **Against the plan** and **Lessons**.
 
 ## Output
 
-The review written to `.singularskills/sales/<deal>/06-review.md`. Present a summary to the user highlighting:
+The review written to `.singularskills/sales/<project>/06-review.md`. Present a summary to the user highlighting:
 - The outcome and the causes the buyer confirmed
 - Any seller-reported cause the buyer contradicted
 - The one thing to change on the next deal

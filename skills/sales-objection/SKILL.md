@@ -13,7 +13,7 @@ Help the seller respond to the objection in "$ARGUMENTS".
 
 ## Prerequisites
 
-The objection, in the buyer's words if possible, and the context. When `$ARGUMENTS` or the request names a deal, use that name as `<deal>` whether or not its folder exists yet in `.singularskills/sales/`. With no deal named: with exactly one deal folder there (not `playbook`), use it; with several, ask which; with none, read none and continue. Read the team's objection guide in `.singularskills/marketing/<deal>/` when it exists.
+The objection, in the buyer's words if possible, and the context. When `$ARGUMENTS` or the request names a deal, use that name as `<deal>` whether or not its folder exists yet in `.singularskills/sales/`. With no deal named: with exactly one deal folder there (not `playbook`), use it; with several, ask which; with none, read none and continue. Read the team's objection guide in the seller's own marketing project in `.singularskills/marketing/*/` (marketing projects are named after the seller's product or company, not the buyer: with exactly one folder there, use it; with several, ask once which is the seller's) when it exists.
 
 ## Process
 

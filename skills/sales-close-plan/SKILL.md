@@ -22,7 +22,7 @@ Plan, with the buyer, the steps from proposal to go-live for "$ARGUMENTS", as `r
 
 Run this skill's gate before writing: `sh <this skill's folder>/scripts/gate.sh <project> <project root>`, where `<project root>` is the folder that contains `.singularskills/` (use `.` when you are already there). If it exits non-zero, stop and tell the user what it printed, unless `--skip-checks` was given (see Arguments). On a refusal, before you stop, append this line to `.singularskills/log.jsonl` (create the folder and file if missing): `{"ts":"<ISO timestamp>","skill":"sales-close-plan","workflow":"sales","phase":5,"project":"<project>","event":"refused","artifact":"05-close.md","note":"<what the gate printed>"}`. Once the gate has passed, or under `--skip-checks` once you have appended the `skipped` line, append this line before you start work: `{"ts":"<ISO timestamp>","skill":"sales-close-plan","workflow":"sales","phase":5,"project":"<project>","event":"started","artifact":"05-close.md","note":""}`.
 
-Read `.singularskills/sales/<deal>/04-proposal.md` for the options, price and next steps. Read `.singularskills/sales/<deal>/02-discovery.md` for the decision process and committee.
+Read `.singularskills/sales/<project>/04-proposal.md` for the options, price and next steps. Read `.singularskills/sales/<project>/02-discovery.md` for the decision process and committee.
 
 ## Process
 
@@ -40,11 +40,11 @@ Read `.singularskills/sales/<deal>/04-proposal.md` for the options, price and ne
 
 7. **Honest selling.** No false urgency, no fake scarcity, no misrepresentation of the product or a competitor, and no commitment (discount, term, date, feature) beyond the policy the user stated; anything beyond it is marked **for approval**, with who approves.
 
-8. **Write the artifact** to `.singularskills/sales/<deal>/05-close.md` with sections **Go-live date**, **Mutual action plan** (a table: step, buyer owner, seller owner, date, confirmed), **Paper process**, **Risks** and **Give-get**.
+8. **Write the artifact** to `.singularskills/sales/<project>/05-close.md` with sections **Go-live date**, **Mutual action plan** (a table: step, buyer owner, seller owner, date, confirmed), **Paper process**, **Risks** and **Give-get**.
 
 ## Output
 
-The close plan written to `.singularskills/sales/<deal>/05-close.md`. Present a summary to the user highlighting:
+The close plan written to `.singularskills/sales/<project>/05-close.md`. Present a summary to the user highlighting:
 - The go-live date and whether the buyer confirmed it
 - The steps on the critical path
 - The biggest risk to the date

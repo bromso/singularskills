@@ -22,7 +22,7 @@ Write down what the buyer in "$ARGUMENTS" actually said, and only that.
 
 Run this skill's gate before writing: `sh <this skill's folder>/scripts/gate.sh <project> <project root>`, where `<project root>` is the folder that contains `.singularskills/` (use `.` when you are already there). If it exits non-zero, stop and tell the user what it printed, unless `--skip-checks` was given (see Arguments). On a refusal, before you stop, append this line to `.singularskills/log.jsonl` (create the folder and file if missing): `{"ts":"<ISO timestamp>","skill":"sales-discovery","workflow":"sales","phase":2,"project":"<project>","event":"refused","artifact":"02-discovery.md","note":"<what the gate printed>"}`. Once the gate has passed, or under `--skip-checks` once you have appended the `skipped` line, append this line before you start work: `{"ts":"<ISO timestamp>","skill":"sales-discovery","workflow":"sales","phase":2,"project":"<project>","event":"started","artifact":"02-discovery.md","note":""}`.
 
-Read `.singularskills/sales/<deal>/01-qualify.md` for the qualification and its unknowns.
+Read `.singularskills/sales/<project>/01-qualify.md` for the qualification and its unknowns.
 
 ## Process
 
@@ -40,11 +40,11 @@ Read `.singularskills/sales/<deal>/01-qualify.md` for the qualification and its 
 
 7. **Gaps for the next call:** the MEDDPICC elements still unknown, as open questions to ask, one at a time, following up on the buyer's words, as `references/qualification.md` describes.
 
-8. **Write the artifact** to `.singularskills/sales/<deal>/02-discovery.md` with sections **Calls** (date, attendees), **Pains**, **Metrics**, **Decision criteria and process**, **Buying committee** and **Gaps**.
+8. **Write the artifact** to `.singularskills/sales/<project>/02-discovery.md` with sections **Calls** (date, attendees), **Pains**, **Metrics**, **Decision criteria and process**, **Buying committee** and **Gaps**.
 
 ## Output
 
-The discovery record written to `.singularskills/sales/<deal>/02-discovery.md`, or, with no call record, nothing written and the reason. Present a summary to the user highlighting:
+The discovery record written to `.singularskills/sales/<project>/02-discovery.md`, or, with no call record, nothing written and the reason. Present a summary to the user highlighting:
 - The buyer's top pain, in their words
 - The metrics they gave
 - The gaps to close on the next call

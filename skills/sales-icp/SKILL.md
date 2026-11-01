@@ -13,7 +13,7 @@ Define who the team in "$ARGUMENTS" should sell to, from evidence where there is
 
 ## Prerequisites
 
-When `$ARGUMENTS` or the request names a project, use that name as `<project>` whether or not its folder exists yet in `.singularskills/sales/` (create it when you write). With no project named, use `playbook`, the folder for everything that spans deals. Read `.singularskills/marketing/<project>/` customer research when it exists.
+When `$ARGUMENTS` or the request names a project, use that name as `<project>` whether or not its folder exists yet in `.singularskills/sales/` (create it when you write). With no project named, use `playbook`, the folder for everything that spans deals. Read the seller's own marketing project in `.singularskills/marketing/*/` (marketing projects are named after the seller's product or company, not the buyer: with exactly one folder there, use it; with several, ask once which is the seller's) customer research when it exists.
 
 Append this line to `.singularskills/log.jsonl` before you write the profile (create the folder and file if missing): `{"ts":"<ISO timestamp>","skill":"sales-icp","workflow":"sales","phase":null,"project":"<project>","event":"started","artifact":"icp/<date>-<slug>.md","note":""}`, where `<date>` is today as `YYYY-MM-DD` and `<slug>` is two to four words naming the topic, never a person.
 

@@ -1,6 +1,6 @@
 ---
 name: sales-qualify
-description: Assess whether a deal is worth pursuing — ICP fit, every MEDDPICC element marked known, assumed or unknown, people identified or engaged, the risk of no decision — and recommend pursue, nurture or drop. Use when a seller has a new opportunity and must decide how much effort it deserves. Not for defining the ideal customer profile itself; see /marketing-customer-research.
+description: Assess whether a deal is worth pursuing — ICP fit, every MEDDPICC element marked known, assumed or unknown, people identified or engaged, the risk of no decision — and recommend pursue, nurture or drop. Use when a seller has a new opportunity and must decide how much effort it deserves. Not for defining the ideal customer profile itself; see /sales-icp.
 metadata:
   argument-hint: "[project] [--skip-checks]"
   workflow: sales
@@ -28,7 +28,7 @@ None — this is the first phase.
 
 ## Process
 
-1. **Find the ideal customer profile:** the newest file in `.singularskills/sales/playbook/icp/` when it exists; else the customer research in `.singularskills/marketing/<deal>/`; else ask the user, once, who their best customers are.
+1. **Find the ideal customer profile:** the newest file in `.singularskills/sales/playbook/icp/` when it exists; else the customer research in the seller's own marketing project in `.singularskills/marketing/*/` (marketing projects are named after the seller's product or company, not the buyer: with exactly one folder there, use it; with several, ask once which is the seller's); else ask the user, once, who their best customers are.
 
 2. **Gather what is known** from the user's notes, emails, CRM record or the conversation, and ask once, together, for anything missing: who the buyer is, how the deal started, who they have spoken to, and what the buyer has said they want.
 
@@ -42,11 +42,11 @@ None — this is the first phase.
 
 7. **Recommend** pursue, nurture or drop, with the reasons, and the unknowns that would change the recommendation.
 
-8. **Write the artifact** to `.singularskills/sales/<deal>/01-qualify.md` with sections **Fit**, **MEDDPICC**, **People**, **No decision**, **Recommendation** and **Unknowns to close**. If it already exists (a re-qualification after discovery), keep the previous file as `01-qualify-<date>.md` (today's date as `YYYY-MM-DD`; if that name is taken, add `-2`, `-3` and so on) before you write, and mark what changed.
+8. **Write the artifact** to `.singularskills/sales/<project>/01-qualify.md` with sections **Fit**, **MEDDPICC**, **People**, **No decision**, **Recommendation** and **Unknowns to close**. If it already exists (a re-qualification after discovery), keep the previous file as `01-qualify-<date>.md` (today's date as `YYYY-MM-DD`; if that name is taken, add `-2`, `-3` and so on) before you write, and mark what changed.
 
 ## Output
 
-The qualification written to `.singularskills/sales/<deal>/01-qualify.md`. Present a summary to the user highlighting:
+The qualification written to `.singularskills/sales/<project>/01-qualify.md`. Present a summary to the user highlighting:
 - The recommendation and why
 - The MEDDPICC elements still unknown
 - Whether the economic buyer and a champion are engaged or only identified
