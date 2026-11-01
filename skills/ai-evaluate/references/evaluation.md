@@ -42,7 +42,7 @@ Agreement alone misleads when most outputs pass. Example: 90 human passes and 10
 
 **The bar.** Trust a judge when its true-negative rate is at least 0.8 and its true-positive rate is at least 0.8; for a check guarding a high-harm failure, raise the true-negative bar to 0.9. Below either bar, do not trust it. (Bars: the pack's call, stated in every judge check.)
 
-**Too few to judge.** With fewer than 10 human-labelled fails, or fewer than 30 labelled rows, the rates are too unstable to approve the judge; say "too few labels" and ask for more. Too few labels blocks approval, never rejection: a judge that already passed more than half of the outputs people failed is not trusted, however few labels there are. (Threshold: the pack's call, a common rule of thumb.)
+**Too few to judge.** With fewer than 10 human-labelled fails, or fewer than 30 labelled rows, the rates are too unstable to approve the judge; say "too few labels" and ask for more. Too few labels blocks approval, never rejection: a judge that already passed more than half of the outputs people failed, or rejected more than half of the outputs people passed, is not trusted, however few labels there are; get more labels before changing its prompt. (Threshold: the pack's call, a common rule of thumb.)
 
 Re-check the judge against fresh human labels after any change to its prompt or model, and on a schedule (quarterly is common). Never invent human labels.
 

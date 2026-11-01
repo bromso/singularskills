@@ -34,7 +34,7 @@ If `.singularskills/ai/<project>/06-evaluate.md` already exists, keep it as `06-
 
 3. **Stop for confirmation.** Show the proposed groups with their counts and two example rows each, and ask a person who knows the domain to confirm, merge, split or rename them. Under `--skip-checks`, or with no answer, write the groups as **proposed** and build no check from them: list them under Open questions as "groups not yet confirmed by a person".
 
-4. **Turn each confirmed group into a check,** ranked by count and harm: a plain check (a rule code can test) for clear-cut failures, an AI judge with written pass/fail criteria for judgement calls. Fix-now items (a missing instruction, a wrong document) become fixes, not checks. Add the new rows to the test set.
+4. **Turn each confirmed group into a check,** ranked by count and harm: a plain check (a rule code can test) for clear-cut failures, an AI judge with written pass/fail criteria for judgement calls. Fix-now items (a missing instruction, a wrong document) become fixes, not checks. List the new test rows in this artifact under **Test set additions**, for the next build to add to its test set.
 
 5. **Validate every AI judge** with `/ai-judge-check`, against human labels the team supplies on the same outputs: agreement, true-positive rate and true-negative rate, as `references/evaluation.md` shows. Never invent human labels; with none, mark the judge **not validated**.
 
@@ -47,6 +47,7 @@ If `.singularskills/ai/<project>/06-evaluate.md` already exists, keep it as `06-
    - **Checks** — per confirmed group: type, criteria, judge validation
    - **Results** — per check
    - **Fixes** — fix-now items and their owners
+   - **Test set additions** — new test rows from the confirmed groups
    - **Compared with previous** — when one was kept
 
 ## Output

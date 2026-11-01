@@ -75,7 +75,7 @@ export const domains: Domain[] = [
 		slug: "analytics",
 		name: "Analytics",
 		methodology: "Decision Analytics Cycle",
-		colour: "sky",
+		colour: "sand",
 		icon: ChartColumn,
 		animatedIcon: "line-md:filter",
 		blurb:
