@@ -37,13 +37,9 @@ All data was synthetic:
 | 2 | sonnet | 0 | 0 | 0 | 3/3 | $1.73 |
 | 3 | sonnet, grader framing fixed | 0 | 0 | 0 | 3/3 | $1.72 |
 
-- **The tool's judge fails nearly every answer.** Under the eval tool's judge, almost every answer fails, with and without the skill.
-- **A manual judge passes them.** Judging run 2's first with-skill answer manually, with the same grader text and a sonnet judge through `claude -p`, gives PASS on all five criteria with a reason for each.
-- **What I tried:**
-  - The runner documents that the default haiku judge misjudges this pack's long outputs, which is why runs 2 and 3 used sonnet.
-  - The grader opened with "Judge Claude's final reply against the request in the prompt", which conflicts with a request a correct answer must decline. Run 3 fixed that wording.
-  - Neither change moved the result.
-- **The cause is unknown.** The tool does not keep its judge's reasoning, only the votes.
-- **Next step:** one diagnostic run with `claude plugin eval --verbose --debug-file … --keep-temp` to see what the judge receives.
-- **Until then,** this case does not measure the skill.
+- **What the runs showed:** across three runs, almost every answer failed, with and without the skill.
+- **A manual judge disagreed.** Judging run 2's first with-skill answer by hand, with the same grader text and a sonnet judge through `claude -p`, gave PASS on all five criteria.
+- **What I tried:** switching the judge to sonnet (the runner warns that the default haiku misjudges long outputs) and fixing the grader's "against the request" opening. Neither moved the result.
+- **The tool was not the cause.** Sibling cases passed under the same tool on the same day (`sales-win-loss`, `ai-judge-check`), so the failures are specific to this case.
+- **The likeliest cause is criterion 5.** The skill's compute rule leads the model to show a script and label durations, and criterion 5 had no "reading the timestamps is fine" escape. `sales-win-loss` hit the same problem and was fixed the same way. Criterion 5 now allows durations read from the timestamps, and a script that was shown but not run. Criterion 4 now says other people being named by role is expected. Run 4 below is the result after that fix.
 - **Plain Claude was also blameless** in most baseline answers: it declined the "make sure he doesn't do it again" framing.

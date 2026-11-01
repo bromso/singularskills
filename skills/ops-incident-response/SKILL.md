@@ -27,7 +27,7 @@ What is happening, in the user's words. When `$ARGUMENTS` or the request names a
    1. Acknowledge and say "I have this, investigating" so nobody duplicates work.
    2. Check what changed recently: deploys, config, feature flags, dependencies.
    3. Find the matching runbook in `04-runbooks.md` and follow it.
-   4. **Stabilise before diagnosing:** roll back, fail over, shed load or disable a feature; say which steps change production and what each does to users.
+   4. **Stabilise before diagnosing:** roll back, fail over, shed load or disable a feature; say which steps change production, what each does to users, and how to undo it.
    5. Escalate when the runbook says so, or after 15 minutes without progress.
 
 5. **Keep a timeline** from now on: time, what was seen, what was done, by role.

@@ -29,7 +29,7 @@ Read `.singularskills/ops/<project>/02-slos.md` for the SLOs and budgets. Read `
 
 ## Process
 
-1. **Burn-rate alerts on each SLO.** Start from the multiwindow, multi-burn-rate thresholds: 14.4× over 1 hour and 5 minutes (**page**), 6× over 6 hours and 30 minutes (**page**), 1× over 3 days and 6 hours (**ticket**). Compute each alert's error-rate threshold for the SLO's **own** target (burn rate × (1 − target)) and the budget consumed when it fires (burn rate × long window ÷ SLO window), with a script written to `.singularskills/ops/<project>/` and included beside the result. Scripts read the user's files where they keep them and write results under `.singularskills/`.
+1. **Burn-rate alerts on each SLO.** Start from the multiwindow, multi-burn-rate thresholds: 14.4× over 1 hour and 5 minutes (**page**), 6× over 6 hours and 30 minutes (**page**), 1× over 3 days and 6 hours (**ticket**). Compute each alert's error-rate threshold for the SLO's **own** target (burn rate × (1 − target)); if that is 100% or more the alert can never fire, so say so and use a lower burn rate or a longer window for it and the budget consumed when it fires (burn rate × long window ÷ SLO window), with a script written to `.singularskills/ops/<project>/` and included beside the result. Scripts read the user's files where they keep them and write results under `.singularskills/`.
 
 2. **Symptom alerts only where no SLO covers a user-facing failure** (a queue backing up, a certificate about to expire); no alerts on CPU, memory or disk alone.
 

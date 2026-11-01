@@ -13,7 +13,7 @@ Work out the numbers for the SLO in "$ARGUMENTS", as `references/slos-and-alerti
 
 ## Prerequisites
 
-The SLO target (for example 99.9%) and window (for example 30 days); optionally the request volume and a current burn rate. Ask once for any that are missing.
+The SLO target (for example 99.9%) and window (for example 30 days); optionally the request volume, a current burn rate, and how much of the budget is already consumed in this window (default: none, a full budget). Ask once for any that are missing.
 
 ## Process
 
@@ -21,9 +21,11 @@ The SLO target (for example 99.9%) and window (for example 30 days); optionally 
 
 2. **The alert thresholds:** for each standard window pair (14.4× over 1 hour and 5 minutes, page; 6× over 6 hours and 30 minutes, page; 1× over 3 days and 6 hours, ticket), the error-rate threshold (burn rate × (1 − target)) and the budget consumed when it fires (burn rate × long window ÷ window).
 
-3. **Time to exhaustion** at the current burn rate when given: window ÷ burn rate.
+3. **Time to exhaustion** at the current burn rate when given: remaining budget × window ÷ burn rate, where the remaining budget is 1 minus the share already consumed; when no consumption was given, say the figure is "from a full budget".
 
-4. **Without a way to run code,** give the formulas with the user's values substituted, and label the results `not computed`.
+4. **Thresholds that can never fire:** if burn rate × (1 − target) is 100% or more, that alert can never fire (the error rate cannot exceed 100%); say so, and use a lower burn rate or a longer window for it.
+
+5. **Without a way to run code,** give the formulas with the user's values substituted, and label the results `not computed`.
 
 ## Output
 
