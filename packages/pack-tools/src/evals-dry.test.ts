@@ -40,11 +40,11 @@ afterEach(() => {
 });
 
 describe("run-evals.sh --dry", () => {
-	it("passes on the repo's own evals/: 21 cases, exit 0", () => {
+	it("passes on the repo's own evals/: 22 cases, exit 0", () => {
 		const result = runDry([], {});
 		expect(result.stderr).toBe("");
 		expect(result.status).toBe(0);
-		expect(result.stdout).toContain("21 case(s)");
+		expect(result.stdout).toContain("22 case(s)");
 		expect(result.stdout).toMatch(/^design-empathize\s+graders=\d+\s+scaffold$/m);
 		expect(result.stdout).toMatch(/^development-plan\s+graders=\d+\s+-$/m);
 		expect(result.stdout).toMatch(/^workflow\s+graders=\d+\s+scaffold$/m);
