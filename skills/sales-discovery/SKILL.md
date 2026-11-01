@@ -26,7 +26,7 @@ Read `.singularskills/sales/<deal>/01-qualify.md` for the qualification and its 
 
 ## Process
 
-1. **Get the call record:** notes or a transcript of a discovery call that has happened, from the user. Ask once if none was given. **With neither, write nothing:** say that this phase records a call that has happened, and that planning the call is the call-prep skill's job, then stop. Phases 3 to 5 depend on this file, so it must never be written from guesses.
+1. **Get the call record:** notes or a transcript of a discovery call that has happened, from the user. Ask once if none was given. **With neither, write nothing:** say that this phase records a call that has happened, and to plan the call with `/sales-call-prep`, then stop. Phases 3 to 5 depend on this file, so it must never be written from guesses.
 
 2. **If `02-discovery.md` already exists** (a later call), keep it as `02-discovery-<date>.md` (today's date as `YYYY-MM-DD`; if that name is taken, add `-2`, `-3` and so on), then write the new file: the overall picture updated, with what changed marked, and a dated section for this call.
 

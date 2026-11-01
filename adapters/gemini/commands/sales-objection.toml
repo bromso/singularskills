@@ -1,0 +1,2 @@
+description = "Draft a response to one objection in one live deal — questions that find what lies behind it before assuming, and an answer grounded in the deal's facts — never deceptive or pressuring. Use when a buyer has raised a concern in a deal and the seller needs to respond well. Not for the team's objection-handling guide; see /marketing-sales-enablement."
+prompt = "Use the sales-objection skill with these arguments: {{args}}"
