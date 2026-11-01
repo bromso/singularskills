@@ -39,7 +39,7 @@ Read `.singularskills/ops/<project>/02-slos.md` for the SLOs and budgets. Read `
 
 5. **Write the rules** in the monitoring query language recorded under **Tooling** in `01-inventory.md` (PromQL, Datadog, CloudWatch). With the tool unknown, write each rule as a plain condition and mark it **rule to fill in**; never invent a syntax.
 
-6. **Existing alerts:** with an export of today's alerts, audit them as the alert-audit skill does (actionable ratio, keep, tune, demote or delete); without one, list the alerts named in `01-inventory.md` and what replaces each.
+6. **Existing alerts:** with an export of today's alerts, audit them as `/ops-alert-audit` does (actionable ratio, keep, tune, demote or delete); without one, list the alerts named in `01-inventory.md` and what replaces each.
 
 7. **Never touch live systems.** Do not run any command against a live system, and never say a command, alert or runbook was tested or verified; you write them for people to apply.
 
