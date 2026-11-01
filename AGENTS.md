@@ -1,6 +1,6 @@
 # singularskills
 
-Instructions for agents working on this repository. singularskills is one pack of Agent Skills for digital production work: 315 skills across 19 domains, ordered into gated workflows. Users install it with `npx skills add bromso/singularskills` (any agent) or as the `singularskills` Claude Code plugin; this file is about changing the pack, not using it.
+Instructions for agents working on this repository. singularskills is one pack of Agent Skills for digital production work: 327 skills across 20 domains, ordered into gated workflows. Users install it with `npx skills add bromso/singularskills` (any agent) or as the `singularskills` Claude Code plugin; this file is about changing the pack, not using it.
 
 ## Layout
 
@@ -21,7 +21,7 @@ scripts/                     # run-evals.sh, smoke-install.sh, check-rename.sh
 docs/superpowers/            # specs and plans (history; not rewritten)
 ```
 
-The domains are `accessibility`, `accounting`, `ai`, `analytics`, `bookkeeping`, `branding`, `coaching`, `compliance`, `design`, `development`, `finance`, `leadership`, `legal`, `marketing`, `project-management`, `research`, `security`, `support` and `singular` (the cross-domain skills). A skill's folder name is `<domain>-<skill>` and equals its frontmatter `name`; it is invoked as `/<domain>-<skill>`.
+The domains are `accessibility`, `accounting`, `ai`, `analytics`, `bookkeeping`, `branding`, `coaching`, `compliance`, `design`, `development`, `finance`, `leadership`, `legal`, `marketing`, `project-management`, `research`, `sales`, `security`, `support` and `singular` (the cross-domain skills). A skill's folder name is `<domain>-<skill>` and equals its frontmatter `name`; it is invoked as `/<domain>-<skill>`.
 
 ## How a skill, a workflow file and a gate relate
 

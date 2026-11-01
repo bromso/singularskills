@@ -1,0 +1,35 @@
+---
+title: Pipeline Review
+description: Find the deals that need attention in a CRM export.
+command: "/sales-pipeline-review <export file>"
+kind: utility
+---
+
+## Purpose
+
+The Pipeline Review skill flags stale or missing next steps, past close dates, idle deals and stages that outrun qualification, and shows what the forecast rests on. Not for designing stages; see `/marketing-revops`.
+
+## Usage
+
+**Example:**
+```
+/sales-pipeline-review <export file>
+```
+
+## Prerequisites
+
+A CRM export of open deals. Contact details never reach the saved review.
+
+## What It Does
+
+<Steps>
+<Step>Computes the checks as of today</Step>
+<Step>Lists deals needing attention with the fixing action</Step>
+<Step>Shows the forecast and how much sits on flagged deals</Step>
+</Steps>
+
+## Output
+
+<Output>
+Creates `.singularskills/sales/playbook/pipeline/<date>-<slug>.md`.
+</Output>

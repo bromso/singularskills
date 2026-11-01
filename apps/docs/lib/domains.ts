@@ -7,6 +7,7 @@ import {
 	Crown,
 	Eye,
 	GraduationCap,
+	Handshake,
 	Kanban,
 	LifeBuoy,
 	LineChart,
@@ -45,7 +46,7 @@ export const domains: Domain[] = [
 		animatedIcon: "line-md:list-3",
 		blurb: "WCAG 2.1 audit methodology — scope, evaluate, report, remediate, and retest.",
 		docsPath: "/docs/accessibility",
-		bento: { order: 6, size: "small" },
+		bento: { order: 6, size: "half" },
 	},
 	{
 		slug: "accounting",
@@ -194,7 +195,7 @@ export const domains: Domain[] = [
 		animatedIcon: "line-md:volume-high",
 		blurb: "Full growth marketing lifecycle — strategy, reach, act, convert, and engage.",
 		docsPath: "/docs/marketing",
-		bento: { order: 4, size: "small" },
+		bento: { order: 4, size: "half" },
 	},
 	{
 		slug: "singular",
@@ -205,7 +206,7 @@ export const domains: Domain[] = [
 		animatedIcon: "line-md:cog",
 		blurb: "Run any workflow phase by phase; find, create and improve skills; report on a project.",
 		docsPath: "/docs/overview",
-		bento: { order: 19, size: "meta" },
+		bento: { order: 20, size: "meta" },
 	},
 	{
 		slug: "project-management",
@@ -216,7 +217,7 @@ export const domains: Domain[] = [
 		animatedIcon: "line-md:calendar",
 		blurb: "Sprint-based project management — initiate, plan, sprint, review, and improve.",
 		docsPath: "/docs/project-management",
-		bento: { order: 17, size: "small" },
+		bento: { order: 17, size: "half" },
 	},
 	{
 		slug: "research",
@@ -227,7 +228,7 @@ export const domains: Domain[] = [
 		animatedIcon: "line-md:search",
 		blurb: "Structured discovery and validation through divergent and convergent thinking.",
 		docsPath: "/docs/research",
-		bento: { order: 3, size: "small" },
+		bento: { order: 3, size: "half" },
 	},
 	{
 		slug: "security",
@@ -239,19 +240,31 @@ export const domains: Domain[] = [
 		blurb:
 			"Full cybersecurity lifecycle — govern, identify, protect, detect, respond, and recover.",
 		docsPath: "/docs/security",
-		bento: { order: 5, size: "small" },
+		bento: { order: 5, size: "half" },
+	},
+	{
+		slug: "sales",
+		name: "Sales",
+		methodology: "Deal Cycle",
+		colour: "sage",
+		icon: Handshake,
+		animatedIcon: "line-md:phone-call",
+		blurb:
+			"One deal at a time — qualify, discover, propose, close, and learn why it was won or lost.",
+		docsPath: "/docs/sales",
+		bento: { order: 18, size: "small" },
 	},
 	{
 		slug: "support",
 		name: "Support",
 		methodology: "Support Operations Cycle",
-		colour: "amber",
+		colour: "lilac",
 		icon: LifeBuoy,
 		animatedIcon: "line-md:chat-round-dots",
 		blurb:
 			"Customer support from first contact to account health — map, categorise, answer, escalate, and review.",
 		docsPath: "/docs/support",
-		bento: { order: 18, size: "small" },
+		bento: { order: 19, size: "small" },
 	},
 ];
 

@@ -1,0 +1,49 @@
+---
+title: "Phase 1: Qualify"
+description: Decide whether a deal deserves effort, with every fact labelled known, assumed or unknown.
+command: "/sales-qualify <deal>"
+kind: phase
+---
+
+## Purpose
+
+The Qualify phase judges a new opportunity against the ideal customer profile and MEDDPICC, without filling gaps with guesses.
+
+## Usage
+
+**Example:**
+```
+/sales-qualify northwind
+```
+
+## Prerequisites
+
+None — this is the first phase.
+
+## What It Does
+
+<Steps>
+<Step>Reads the ideal customer profile from the playbook folder</Step>
+<Step>Checks fit against the profile</Step>
+<Step>Labels every MEDDPICC element known, assumed or unknown</Step>
+<Step>Marks each person identified or engaged</Step>
+<Step>Names the risk of no decision</Step>
+<Step>Recommends pursue, nurture or drop</Step>
+</Steps>
+
+## Output
+
+<Output>
+Creates `.singularskills/sales/<deal>/01-qualify.md` containing:
+
+- Fit
+- MEDDPICC
+- People
+- No decision
+- Recommendation
+- Unknowns to close
+</Output>
+
+## Next Phase
+
+<NextPhase href="/docs/sales/discovery" title="Discovery">After Qualify, continue with Discovery.</NextPhase>

@@ -1,0 +1,34 @@
+name: sales
+title: Deal Cycle
+folder: sales
+phases:
+  - phase: 1
+    title: Qualify
+    artifact: 01-qualify.md
+    requires: []
+    skills: [sales-qualify]
+  - phase: 2
+    title: Discovery
+    artifact: 02-discovery.md
+    requires: [01-qualify.md]
+    skills: [sales-discovery]
+  - phase: 3
+    title: Solution
+    artifact: 03-solution.md
+    requires: [02-discovery.md]
+    skills: [sales-solution]
+  - phase: 4
+    title: Proposal
+    artifact: 04-proposal.md
+    requires: [02-discovery.md, 03-solution.md]
+    skills: [sales-proposal]
+  - phase: 5
+    title: Close plan
+    artifact: 05-close.md
+    requires: [04-proposal.md]
+    skills: [sales-close-plan]
+  - phase: 6
+    title: Review
+    artifact: 06-review.md
+    requires: []
+    skills: [sales-deal-review]

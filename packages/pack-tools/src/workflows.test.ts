@@ -68,9 +68,9 @@ describe("loadWorkflows", () => {
 		expect(wf?.phases[3].requires).toEqual(["02-define.md", "03-ideate.md"]);
 	});
 
-	test("loads all 22 workflow files, compliance phase 1 naming its folder", () => {
+	test("loads all 23 workflow files, compliance phase 1 naming its folder", () => {
 		const workflows = loadWorkflows(workflowsDir);
-		expect(workflows).toHaveLength(22);
+		expect(workflows).toHaveLength(23);
 		const compliance = workflows.find((w) => w.name === "compliance");
 		expect(compliance?.phases.find((p) => p.phase === 1)?.artifact).toBe("01-assess/");
 	});

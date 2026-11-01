@@ -1,0 +1,6 @@
+---
+description: "Write up a discovery call from the seller's notes or transcript — the buyer's pains in their own words, the metrics they gave, their decision criteria and process, and the buying committee — leaving unknown whatever the buyer did not say. Use when a seller has held a discovery call and needs the buyer's picture written down. Not for researching buyers in general; see /marketing-customer-research."
+argument-hint: "[project] [--skip-checks]"
+---
+
+Use the `sales-discovery` skill with these arguments: $ARGUMENTS

@@ -504,6 +504,7 @@ const CROSS_DOMAIN_READS: Record<string, string[]> = {
 	support: ["research", "marketing", "branding"],
 	analytics: ["research", "marketing", "finance", "support"],
 	ai: ["research", "support", "analytics", "development", "compliance"],
+	sales: ["marketing", "legal", "research", "support"],
 };
 
 /** The skill's artifact folder: its workflow's folder for a phase member, else its domain. */
@@ -747,6 +748,7 @@ export const COMPUTE_WITH_CODE_PLUGINS = new Set([
 	"support",
 	"analytics",
 	"ai",
+	"sales",
 ]);
 
 const FENCE = /^\s*(```|~~~)/;

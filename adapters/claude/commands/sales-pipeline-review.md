@@ -1,0 +1,6 @@
+---
+description: "Review a sales pipeline from a CRM export — deals with no next step or a stale one, close dates in the past, stages that do not match their qualification, and the forecast by category — with counts computed. Use when a seller or manager wants to know which deals need attention before a forecast call. Not for designing pipeline stages or lead scoring; see /marketing-revops."
+argument-hint: "<export file> [project]"
+---
+
+Use the `sales-pipeline-review` skill with these arguments: $ARGUMENTS

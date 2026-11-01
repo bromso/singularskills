@@ -1,0 +1,36 @@
+---
+title: Win-Loss
+description: Find out why many deals were really won or lost.
+command: "/sales-win-loss <deals file>"
+kind: utility
+---
+
+## Purpose
+
+The Win-Loss skill compares the reasons reps logged with what buyers said. A reason only the seller gave is never reported as the cause, and price is checked against the buyer evidence before anyone cuts it.
+
+## Usage
+
+**Example:**
+```
+/sales-win-loss <deals file>
+```
+
+## Prerequisites
+
+Closed deals with seller reasons and any buyer debriefs.
+
+## What It Does
+
+<Steps>
+<Step>Counts seller and buyer reasons</Step>
+<Step>Checks price against the buyer evidence</Step>
+<Step>Reports the gap between the two accounts</Step>
+<Step>Recommends changes with owners, and an interview guide when buyer input is missing</Step>
+</Steps>
+
+## Output
+
+<Output>
+Creates `.singularskills/sales/playbook/win-loss/<date>-<slug>.md`.
+</Output>

@@ -1,0 +1,49 @@
+---
+title: "Phase 2: Discovery"
+description: Write up a held discovery call from notes or a transcript — only what the buyer said.
+command: "/sales-discovery <deal>"
+kind: phase
+---
+
+## Purpose
+
+The Discovery phase records what the buyer actually said. With no notes or transcript it writes nothing and points to `/sales-call-prep`, so later phases never rest on a call that has not happened.
+
+## Usage
+
+**Example:**
+```
+/sales-discovery northwind
+```
+
+## Prerequisites
+
+Requires `.singularskills/sales/<deal>/01-qualify.md`. Use `--skip-checks` to bypass.
+
+## What It Does
+
+<Steps>
+<Step>Quotes the buyer's pains with who said them</Step>
+<Step>Records the metrics the buyer gave</Step>
+<Step>Writes the decision criteria and process as stated</Step>
+<Step>Maps the buying committee</Step>
+<Step>Lists the gaps for the next call</Step>
+<Step>Adds later calls to the same file, keeping the previous version by date</Step>
+</Steps>
+
+## Output
+
+<Output>
+Creates `.singularskills/sales/<deal>/02-discovery.md` containing:
+
+- Calls
+- Pains
+- Metrics
+- Decision criteria and process
+- Buying committee
+- Gaps
+</Output>
+
+## Next Phase
+
+<NextPhase href="/docs/sales/solution" title="Solution">After Discovery, continue with Solution.</NextPhase>

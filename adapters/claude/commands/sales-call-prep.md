@@ -1,0 +1,6 @@
+---
+description: "Prepare for one upcoming sales call, including the first discovery call — the goal, an agenda, who attends and what each cares about, open questions for the deal's unknowns, and the one next step to ask for. Use when a seller has a call coming up and wants to walk in prepared. Not for writing up a call that has happened; see /sales-discovery."
+argument-hint: "[deal] [call]"
+---
+
+Use the `sales-call-prep` skill with these arguments: $ARGUMENTS

@@ -1,0 +1,35 @@
+---
+title: ICP
+description: Define the ideal customer profile and qualification criteria from your deals.
+command: "/sales-icp [project]"
+kind: utility
+---
+
+## Purpose
+
+The ICP skill defines who to sell to, computing fit and win rate by segment when you supply a deals export.
+
+## Usage
+
+**Example:**
+```
+/sales-icp [project]
+```
+
+## Prerequisites
+
+A won and lost deals export, if you have one; marketing's customer research when it exists.
+
+## What It Does
+
+<Steps>
+<Step>Computes win rate, deal size and cycle by segment</Step>
+<Step>Writes the profile, each criterion marked by its evidence</Step>
+<Step>Writes must-haves, nice-to-haves and disqualifiers</Step>
+</Steps>
+
+## Output
+
+<Output>
+Creates `.singularskills/sales/playbook/icp/<date>-<slug>.md`, which Qualify reads.
+</Output>

@@ -1,0 +1,28 @@
+{
+	"title": "Sales",
+	"description": "Qualify, discover, propose and close deals, and learn from wins and losses",
+	"icon": "Handshake",
+	"root": true,
+	"pages": [
+		"index",
+		"---Phases---",
+		"qualify",
+		"discovery",
+		"solution",
+		"proposal",
+		"close-plan",
+		"deal-review",
+		"---Memory---",
+		"artifacts",
+		"storage",
+		"---Examples---",
+		"examples",
+		"---Utilities---",
+		"icp",
+		"call-prep",
+		"follow-up",
+		"objection",
+		"pipeline-review",
+		"win-loss"
+	]
+}

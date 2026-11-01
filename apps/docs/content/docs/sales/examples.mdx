@@ -1,0 +1,56 @@
+---
+title: Examples
+description: End-to-end walkthrough of one deal, from qualification to review.
+kind: overview
+---
+
+## Scenario: Northwind Freight
+
+You sell route-planning software. Northwind Freight, a 300-truck haulier, filled in a demo request. Their ops director, Priya, mentioned that planners spend most of Monday rebuilding routes by hand.
+
+### Phase 1: Qualify
+
+```
+/sales-qualify northwind
+```
+
+**Sample output snippet:**
+> **Economic buyer:** unknown. Priya is engaged, but the CFO has not been named. **No decision:** if they do nothing, planners keep losing Mondays; cost unknown until discovery.
+> **Recommendation: pursue**, if the CFO can be identified on the first call.
+
+### Phase 2: Discovery
+
+```
+/sales-discovery northwind
+```
+
+**Sample output snippet:**
+> **Pain (Priya, ops director):** "Every Monday four planners rebuild the week by hand, and we still miss delivery windows."
+> **Metrics:** 4 planners × 8 hours a week (known, call of 12 May).
+
+### Phases 3–5
+
+```
+/sales-solution northwind
+/sales-proposal northwind
+/sales-close-plan northwind
+```
+
+**Sample output snippet:**
+> **Value case (computed):** 32 planner-hours a week at £38 an hour is about £63,000 a year, from Priya's figures.
+> **For approval:** Priya asked for 25% off; policy allows 15%. The proposal shows 15% and the rest needs the sales director.
+> **Close plan:** go-live 1 September (buyer's date); security review starts now, in parallel with the commercial decision.
+
+### Phase 6: Review
+
+```
+/sales-deal-review northwind
+```
+
+### Across many deals
+
+```
+/sales-win-loss lost-deals.csv
+```
+
+> **Price check:** reps logged "price" on 14 of 20 losses, but buyer debriefs on 8 of those name slow responses, missing integrations or a champion who left. Cutting prices is not supported by this evidence.

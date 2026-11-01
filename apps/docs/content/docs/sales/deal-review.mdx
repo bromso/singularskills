@@ -1,0 +1,48 @@
+---
+title: "Phase 6: Review"
+description: Review one closed deal with the seller's and buyer's accounts kept apart.
+command: "/sales-deal-review <deal>"
+kind: phase
+---
+
+## Purpose
+
+The Review phase learns from a won, lost or no-decision deal. It runs on any deal, even one that never went through the earlier phases.
+
+## Usage
+
+**Example:**
+```
+/sales-deal-review northwind
+```
+
+## Prerequisites
+
+None required: a deal can end at any phase. It reads whichever earlier artifacts exist.
+
+## What It Does
+
+<Steps>
+<Step>Collects the outcome and both accounts</Step>
+<Step>Marks no buyer input when there is none and offers an interview guide</Step>
+<Step>Rates each cause by the buyer's own words</Step>
+<Step>Compares the deal with its plan when artifacts exist</Step>
+<Step>Lists what to repeat and change</Step>
+</Steps>
+
+## Output
+
+<Output>
+Creates `.singularskills/sales/<deal>/06-review.md` containing:
+
+- Outcome
+- Seller's account
+- Buyer's account
+- Causes
+- Against the plan
+- Lessons
+</Output>
+
+## Next Step
+
+Across many deals, `/sales-win-loss` finds the patterns.

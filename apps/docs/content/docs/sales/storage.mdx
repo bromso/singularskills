@@ -1,0 +1,36 @@
+---
+title: Storage
+description: How Sales artifacts are organized in the .singularskills/ directory.
+kind: overview
+---
+
+## Directory Structure
+
+```
+.singularskills/sales/
+  <deal>/                    ← one folder per deal, usually the buyer's company
+    01-qualify.md
+    01-qualify-<date>.md     ← earlier versions, kept on re-run
+    02-discovery.md
+    02-discovery-<date>.md
+    03-solution.md
+    04-proposal.md
+    05-close.md
+    06-review.md
+  playbook/                  ← everything that spans deals
+    icp/
+    pipeline/
+    win-loss/
+```
+
+Scripts the skills write to compute value cases, pipeline checks and win-loss counts sit beside the files. Your CRM exports and notes stay wherever you keep them; contact details never reach the saved files outside a deal's own folder.
+
+## File Naming Convention
+
+Phase files use a numbered prefix (`01-` through `06-`). Playbook files are named `<date>-<slug>.md`, where the slug names the topic, never a person.
+
+## Accessing Artifacts
+
+1. Each deal is a folder under `.singularskills/sales/`
+2. The ideal customer profile Qualify uses is the newest file in `playbook/icp/`
+3. A deal's unknowns are listed at the end of `01-qualify.md` and `02-discovery.md`

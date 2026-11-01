@@ -1,0 +1,64 @@
+---
+title: Sales Domain Overview
+description: A six-phase cycle for each deal, from qualifying it to learning why it was won or lost.
+kind: overview
+---
+
+The Sales domain works one deal at a time: qualify, discovery, solution, proposal, close plan and review. Each phase writes a numbered file to `.singularskills/sales/<deal>/` with the decisions made and the questions still open. Six utilities define the ideal customer profile, prepare a call, draft a follow-up, answer one objection, review the pipeline, and find why many deals were won or lost.
+
+Every buyer fact is labelled **known** (with its source), **assumed** or **unknown**, and every person **identified** or **engaged**. Numbers are `computed` from the buyer's or your own figures, or labelled an `illustration`. No draft uses false urgency, fake scarcity or misrepresentation, and nothing beyond your stated policy is offered: it is marked **for approval**.
+
+## Sales Phases
+
+| Phase | Command | Purpose |
+|-------|---------|---------|
+| Qualify | `/sales-qualify` | Fit, MEDDPICC, people, the risk of no decision; pursue, nurture or drop |
+| Discovery | `/sales-discovery` | What the buyer said on a held call, in their words |
+| Solution | `/sales-solution` | The value case from the buyer's numbers, and the proof plan |
+| Proposal | `/sales-proposal` | Options priced from your policy |
+| Close plan | `/sales-close-plan` | The mutual action plan to go-live |
+| Review | `/sales-deal-review` | Why one deal was won or lost, from both sides |
+
+## Utility Skills
+
+| Skill | Command | Purpose |
+|-------|---------|---------|
+| ICP | `/sales-icp` | Who to sell to, from your deals |
+| Call Prep | `/sales-call-prep` | Prepare one call |
+| Follow-up | `/sales-follow-up` | The recap email after a call |
+| Objection | `/sales-objection` | One objection in one live deal |
+| Pipeline Review | `/sales-pipeline-review` | Deals that need attention |
+| Win-Loss | `/sales-win-loss` | The real reasons across many deals |
+
+## Artifact Flow
+
+```
+.singularskills/sales/
+  northwind/              ← one folder per deal
+    01-qualify.md
+    02-discovery.md
+    03-solution.md
+    04-proposal.md
+    05-close.md
+    06-review.md
+  playbook/               ← everything that spans deals
+    icp/
+    pipeline/
+    win-loss/
+```
+
+## What the Research Says
+
+- Listening and adapting drive sales outcomes (Itani et al., 2019).
+- Sellers misjudge why they lose; buyers name adaptability, relationship and cost, and "price" is often the easy answer (Friend et al., 2014; Clozd; Corporate Visions).
+- Complex deals are decided by a committee, and often by no one: "no decision" is the competitor to plan for.
+
+## Cross-Domain Integration
+
+- **Marketing** owns the team's battle cards and objection guide (`/marketing-sales-enablement`), cold outbound, pipeline design and pricing; the sales skills read marketing's customer research and pricing work.
+- **Legal** owns contract review and negotiation prep; the close plan links them.
+- **Support** and **Research** artifacts inform qualification.
+
+## Skills in this domain
+
+<DomainGrid domain="sales" />

@@ -289,6 +289,15 @@ describe("artifact-root", () => {
 		).toEqual(["artifact-root"]);
 	});
 
+	it("lets sales skills read marketing, legal, research and support only", () => {
+		const reads =
+			"Read `.singularskills/marketing/<p>/`, `.singularskills/legal/<p>/`, `.singularskills/research/<p>/` and `.singularskills/support/<p>/`.";
+		expect(rules(runAs("sales-win-loss", reads))).not.toContain("artifact-root");
+		expect(rules(runAs("sales-win-loss", "Read `.singularskills/finance/<p>/x.md`."))).toContain(
+			"artifact-root",
+		);
+	});
+
 	it("lets ai skills read research, support, analytics, development and compliance only", () => {
 		const reads =
 			"Read `.singularskills/research/<p>/`, `.singularskills/support/<p>/`, `.singularskills/analytics/<p>/`, `.singularskills/development/<p>/` and `.singularskills/compliance/<p>/`.";
@@ -913,6 +922,7 @@ describe("compute-with-code-present", () => {
 			"analytics",
 			"bookkeeping",
 			"finance",
+			"sales",
 			"support",
 		]);
 	});
@@ -928,6 +938,12 @@ describe("compute-with-code-present", () => {
 	it("names every computing domain in its message", () => {
 		const [issue] = runAs("support-reply", "# X\n\n## Output\n\n- Reply\n");
 		for (const domain of COMPUTE_WITH_CODE_PLUGINS) expect(issue.message).toContain(domain);
+	});
+
+	it("flags a sales skill without the paragraph", () => {
+		expect(rules(runAs("sales-objection", "# X\n\n## Output\n\n- Reply\n"))).toEqual([
+			"compute-with-code-present",
+		]);
 	});
 
 	it("flags an ai skill without the paragraph", () => {
