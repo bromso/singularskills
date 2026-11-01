@@ -92,6 +92,12 @@
 		"03": ["01-discover.md", "02-define.md"],
 		"04": ["01-discover.md", "02-define.md", "03-design.md"]
 	},
+	"sales": {
+		"02": ["01-qualify.md"],
+		"03": ["02-discovery.md"],
+		"04": ["02-discovery.md", "03-solution.md"],
+		"05": ["04-proposal.md"]
+	},
 	"security": {
 		"01": ["00-govern.md"],
 		"02": ["00-govern.md"],
