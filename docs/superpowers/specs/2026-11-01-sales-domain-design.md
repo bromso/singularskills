@@ -6,7 +6,8 @@ Project 7 of the singularskills programme, and the fourth new domain after
 for research through Consensus, Context7 and web search. Every decision below
 is the controller's call unless marked *(owner)*, made from that research (§6),
 the existing marketing and legal skills it must not duplicate, and the patterns
-of the earlier domains.
+of the earlier domains. A builder check on 2026-11-01 raised four questions;
+their answers are marked *(builder-check answer, controller's call)*.
 
 ## 1. Intent
 
@@ -114,11 +115,11 @@ is **Deal Cycle**.
 | 3 | Solution | `sales-solution` | `03-solution.md` | `02-discovery.md` |
 | 4 | Proposal | `sales-proposal` | `04-proposal.md` | `02-discovery.md`, `03-solution.md` |
 | 5 | Close plan | `sales-close-plan` | `05-close.md` | `04-proposal.md` |
-| 6 | Review | `sales-deal-review` | `06-review.md` | `01-qualify.md` |
+| 6 | Review | `sales-deal-review` | `06-review.md` | — |
 
 1. **Qualify** (`sales-qualify`):
-   - Fit against the ideal customer profile (from `/sales-icp` when it
-     exists, else from `.singularskills/marketing/` customer research, else
+   - Fit against the ideal customer profile (the newest file in
+     `.singularskills/sales/playbook/icp/` when it exists, else from `.singularskills/marketing/` customer research, else
      from the user).
    - A MEDDPICC-style qualification, every element marked *known* (with its
      source), *assumed* or *unknown*: metrics, economic buyer, decision
@@ -128,14 +129,21 @@ is **Deal Cycle**.
    - The risk of no decision: what the buyer does if they do nothing.
    - A pursue, nurture or drop recommendation, with the gaps that would
      change it.
-2. **Discovery** (`sales-discovery`). Two modes in one phase:
-   - Before the call: a call plan with goals, open questions per
-     qualification gap, and who should attend.
-   - After the call, from notes or a transcript the user supplies: the
-     buyer's pains, in their words and as quotes; metrics they gave; the
-     decision criteria and process as stated; and the buying committee map
-     (role, stance, identified or engaged).
+2. **Discovery** (`sales-discovery`). Written only from what the buyer
+   said: notes or a transcript of a discovery call the user supplies.
+   - With neither, it writes nothing and points to `/sales-call-prep` to plan
+     the call, so phases 3–5 can never run on a call that has not happened.
+   - From the notes: the buyer's pains, in their words and as quotes; metrics
+     they gave; the decision criteria and process as stated; and the buying
+     committee map (role, stance, identified or engaged).
    - Anything the buyer did not say stays *unknown*.
+   - **Later calls add to the same file.** A re-run first keeps the previous
+     file as `02-discovery-<date>.md` (with `-2`, `-3` if the name is taken).
+     The new file adds a dated section for the call and updates the overall
+     picture, marking what changed.
+   - Re-running Qualify after discovery keeps `01-qualify-<date>.md` the same
+     way.
+   *(Builder-check answer, controller's call.)*
    - It plans questions that make the buyer talk: open, one at a time, and
      following up on their words rather than pitching.
 3. **Solution** (`sales-solution`):
@@ -165,21 +173,35 @@ is **Deal Cycle**.
      it is marked *no buyer input*.
    - The causes, rated by how well the buyer's own words support them.
    - What to repeat or change.
-   - It requires only `01-qualify.md`, because a deal can end at any phase.
+   - It requires nothing, because a deal can end at any phase, and the
+     deals most worth reviewing often never went through the pack. When
+     earlier artifacts exist it reads them. *(Builder-check answer,
+     controller's call. If a pack check rejects a later phase with no
+     requires, the builder records a ruling and falls back to requiring
+     `01-qualify.md`, with acceptance run 3 using `--skip-checks`.)*
    - When the user wants buyer input, it drafts a short, neutral interview
      guide.
 
 ### Utilities (no phase, run alone)
 
+**The playbook folder.** Everything that spans deals lives in one fixed
+project folder, `.singularskills/sales/playbook/`: the ideal customer profile,
+pipeline reviews and win-loss reviews. Deals are every other folder under
+`.singularskills/sales/`. The cross-deal utilities default to `playbook`
+unless the user names another project. `playbook` holds no phase artifacts,
+so status tooling may list it as a project with no phases; that is
+acceptable. *(Builder-check answer, controller's call.)*
+
 - **`sales-icp`**:
   - The ideal customer profile and the qualification criteria, from the
     user's won and lost deals when they supply an export (fit and win rate
     by segment, computed with code) and from marketing's customer research.
-  - Writes `.singularskills/sales/<project>/icp/<date>-<slug>.md`, where the
-    project names the sales motion (for example `playbook`).
+  - Writes `.singularskills/sales/playbook/icp/<date>-<slug>.md`. Qualify
+    reads the newest file there.
   - Not for buyer personas for marketing; see `/marketing-customer-research`.
 - **`sales-call-prep`**:
-  - Preparation for one upcoming call, from the deal's artifacts: goal,
+  - Preparation for one upcoming call, including the first discovery call,
+    from the deal's artifacts: goal,
     agenda, the attendees and what each cares about, questions for the open
     gaps, and the one next step to ask for.
   - Writes no file.
@@ -199,7 +221,7 @@ is **Deal Cycle**.
   - From a CRM export: deals with no next step or a stale one, deals whose
     stage doesn't match their qualification, close dates in the past, and
     the forecast by category. Computed with code.
-  - Writes `.singularskills/sales/<project>/pipeline/<date>-<slug>.md`.
+  - Writes `.singularskills/sales/playbook/pipeline/<date>-<slug>.md`.
   - Not for designing stages; see `/marketing-revops`.
 - **`sales-win-loss`**:
   - Across many closed deals: reasons as the seller logged them against
@@ -207,10 +229,13 @@ is **Deal Cycle**.
     debriefs, and the gap between them, with counts computed with code.
   - Seller-only reasons are labelled as such and never reported as the cause.
   - It can draft a neutral buyer-interview guide.
-  - Writes `.singularskills/sales/<project>/win-loss/<date>-<slug>.md`.
+  - Writes `.singularskills/sales/playbook/win-loss/<date>-<slug>.md`.
 
 Descriptions follow the pack rule and carry `Not for …; see /…` lines against
-§3's neighbours.
+§3's neighbours. **No other domain's skills are edited**, as in `ai`. Routing
+to `sales-win-loss` and `sales-objection` relies on their own descriptions,
+which name the situation precisely ("several lost deals", "debriefs", "one
+objection in a live deal"). *(Builder-check answer, controller's call.)*
 
 ## 5. How the skills are written
 
@@ -313,7 +338,12 @@ builder checks. In the root `meta.json`, `sales` goes after `marketing`.
   - Scaffolded file: 20 lost deals. The seller-logged reason is "price" on
     14, but buyer debrief notes on 8 of them say something else: slow
     responses, a missing integration, a champion who left.
-  - The prompt: "we keep losing on price — should we cut our prices?"
+  - The prompt: "Here are our last 20 lost deals with the reasons our reps
+    logged, and the buyer debriefs we have. Reps say we keep losing on price.
+    What's really behind our losses, and should we cut prices?" It names the
+    lost deals and debriefs so routing points at win-loss, not pricing. If
+    the skill still does not fire, the builder records it in the acceptance
+    file with the grader results, as project 1's conductor case was.
   - Graders:
     - the skill fired;
     - the answer does not recommend a price cut on this evidence;
@@ -329,8 +359,12 @@ builder checks. In the root `meta.json`, `sales` goes after `marketing`.
      - The proposal stays within a stated 15% discount limit.
      - The close plan runs legal and security in parallel.
   2. Phase 3 for a deal with only `01-qualify.md`: the gate stops it.
-  3. `/sales-deal-review` on a lost deal with only the seller's notes:
-     marked *no buyer input*, and it offers an interview guide.
+  3. `/sales-deal-review` on a lost deal that never went through the pack,
+     with only the seller's notes: it runs with no earlier artifacts, is
+     marked *no buyer input*, and offers an interview guide.
+  6. `/sales-discovery` for a deal with no notes: it writes nothing and points
+     to `/sales-call-prep`. A second run with notes from a second call keeps
+     `02-discovery-<date>.md`.
   4. `/sales-pipeline-review` on a 30-deal CRM export: stale next steps and
      past close dates are found and counted with a script, and no contact
      details appear in the artifact.
