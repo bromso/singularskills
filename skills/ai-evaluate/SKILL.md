@@ -24,7 +24,7 @@ Run this skill's gate before writing: `sh <this skill's folder>/scripts/gate.sh 
 
 Read `.singularskills/ai/<project>/01-define.md` for the success criteria and failure modes and `.singularskills/ai/<project>/05-build.md` for the initial test set. Read `.singularskills/development/<project>/` when it exists, and name what was built; if nothing was built yet, say that this phase needs outputs from the built feature (or a prototype) and ask for them.
 
-If `.singularskills/ai/<project>/06-evaluate.md` already exists, keep it as `06-evaluate-<date>.md` (today's date as `YYYY-MM-DD`) before you write, and compare against it.
+If `.singularskills/ai/<project>/06-evaluate.md` already exists, keep it as `06-evaluate-<date>.md` (today's date as `YYYY-MM-DD`; if that name is taken, add `-2`, `-3` and so on) before you write, and compare against it.
 
 ## Process
 

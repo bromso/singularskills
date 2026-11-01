@@ -34,7 +34,7 @@ Read `.singularskills/ai/<project>/06-evaluate.md` for the checks, results and j
 
 4. **Check the compliance work** that applies: `/compliance-eu-ai-act` for AI used in the EU, `/compliance-nist-ai-rmf` and `/compliance-iso42001` for risk-management frameworks. Name which apply and whether they are done; this skill does not assess them.
 
-5. **Decide:** **launch** (every check meets its bar, review and rollout set), **hold** (a bar missed, evidence missing, or compliance open), or **fix** (a failure group needs a change first). For **fix**, name the phase to re-run: 3 for a prompt change, 5 for a build change, then 6.
+5. **Decide.** With no confirmed check, the decision is **hold**: a launch needs evidence, and groups that are only proposed give none. Otherwise: **launch** (every check meets its bar, review and rollout set), **hold** (a bar missed, evidence missing, or compliance open), or **fix** (a failure group needs a change first). For **fix**, name the phase to re-run: 3 for a prompt change, 5 for a build change, then 6.
 
 6. **Write the artifact** to `.singularskills/ai/<project>/07-ship.md` with sections **Launch bar**, **Human review**, **Rollout and kill switch**, **Compliance**, and **Decision** (with the evidence behind it).
 

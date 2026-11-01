@@ -23,7 +23,7 @@ Append this line to `.singularskills/log.jsonl` before you write the plan (creat
 
 1. **Map what an attacker can reach:** every input the model reads (the user's message, **retrieved** documents, web pages, emails, tool results), every tool it can call and what each can change, and the data it can see.
 
-2. **Write the attacks,** at least three per category that applies, each with a test input and the safe response:
+2. **Write the attacks,** at least three per category that applies, each with a test input and the safe response. Test inputs use placeholders (`[EMAIL]`, `[ACCOUNT]`) or invented data, never personal data copied from the team's content, logs or outputs:
    - **Direct prompt injection** — the user's message tries to override the instructions
    - **Indirect prompt injection** — instructions hidden in retrieved documents or tool results, which the user may never see; for a retrieval feature, a planted document in the team's own content
    - **Jailbreaks** — role-play, hypotheticals or encoding to get output the feature must not give

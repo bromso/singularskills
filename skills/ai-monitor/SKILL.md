@@ -24,7 +24,7 @@ Run this skill's gate before writing: `sh <this skill's folder>/scripts/gate.sh 
 
 Read `.singularskills/ai/<project>/07-ship.md` for the launch bar, human review and rollout. Read `.singularskills/ai/<project>/06-evaluate.md` for the checks.
 
-If `.singularskills/ai/<project>/08-monitor.md` already exists, keep it as `08-monitor-<date>.md` (today's date as `YYYY-MM-DD`) before you write, and compare against it.
+If `.singularskills/ai/<project>/08-monitor.md` already exists, keep it as `08-monitor-<date>.md` (today's date as `YYYY-MM-DD`; if that name is taken, add `-2`, `-3` and so on) before you write, and compare against it.
 
 ## Process
 

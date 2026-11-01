@@ -35,8 +35,8 @@ Append this line to `.singularskills/log.jsonl` before you write the check (crea
 3. **Check there are enough labels:** with fewer than 10 human-labelled fails, or fewer than 30 labelled rows, there are **too few** labels to approve the judge. Say so, give the counts, and ask for more labels. Too few labels stops you approving a judge, never rejecting one: if the judge already passed more than half of the outputs people failed, the verdict is **do not trust**, whatever the label count.
 
 4. **Judge the judge** on the true-negative rate first, then the true-positive rate:
-   - **trust** — it catches the failures people catch (true-negative rate high) and rarely rejects good outputs
-   - **do not trust** — it misses failures people catch, or rejects many good outputs; say which, with the cell counts
+   - **trust** — true-negative rate at least 0.8 and true-positive rate at least 0.8, with enough labels (step 3); for a check guarding a high-harm failure, raise the true-negative bar to 0.9 (the pack's call, stated in the check)
+   - **do not trust** — either rate below its bar; say which, with the cell counts
    - **too few labels** — as in step 3
 
 5. **List the disagreements** (cells b and c) by output ID with a short redacted quote, and what they have in common.
