@@ -14,6 +14,7 @@ export {
 	HANDOFF_PARAGRAPH,
 	HANDOFF_TAIL_FIRST,
 	HANDOFF_TAIL_LATER,
+	HANDOFF_TAIL_UNGATED,
 	type HandoffFields,
 	handoffParagraph,
 	outputSectionLines,

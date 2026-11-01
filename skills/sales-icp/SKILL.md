@@ -2,7 +2,7 @@
 name: sales-icp
 description: Define the ideal customer profile and the qualification criteria for a sales team — from won and lost deals when an export is given (fit and win rate by segment, computed) and from marketing's customer research — for every deal to be qualified against. Use when a team wants to know which prospects are worth chasing. Not for buyer personas for marketing; see /marketing-customer-research.
 metadata:
-  argument-hint: "[project] [deals file]"
+  argument-hint: "[deals file] [project]"
 ---
 
 # ICP

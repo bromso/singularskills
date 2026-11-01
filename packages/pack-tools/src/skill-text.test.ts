@@ -268,6 +268,13 @@ describe("fix-skill-text: the handoff paragraph", () => {
 		expect(DESIGN_DEFINE_HANDOFF).not.toContain("Just this step");
 	});
 
+	test("a later phase that requires nothing says it has no gate", () => {
+		const reviewPhase = { ...design.phases[1], requires: [] };
+		const text = handoffParagraph({ workflow: design, phase: reviewPhase, name: "x-review" });
+		expect(text).toContain("this one has no gate, since it needs no earlier artifact");
+		expect(text).not.toContain("behind its gate");
+	});
+
 	test("checks the open run before intent, so the conductor's own run never loops", () => {
 		const text = handoffParagraph(designMember);
 		const openRun = text.indexOf("If one exists, the conductor is running you: continue here.");
@@ -344,6 +351,7 @@ describe("fix-skill-text: the handoff paragraph", () => {
 					workflowTitle: m.workflow.title,
 					workflowName: m.workflow.name,
 					first: m.phase === m.workflow.phases[0],
+					ungated: m.phase !== m.workflow.phases[0] && m.phase.requires.length === 0,
 				}),
 			);
 		}

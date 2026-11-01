@@ -1,21 +1,21 @@
-deal,company,seller_reason,buyer_debrief
-D01,Harbor Logistics,price,
-D02,Pinecrest Foods,price,You don't integrate with NetSuite and that was a must-have for finance.
-D03,Tallow & Co,price,Our sponsor left the company in March and nobody else was pushing it.
-D04,Meridian Clinics,price,We needed a Shopify connector; you said it was on the roadmap.
-D05,Brightwave Media,no budget,
-D06,Oakline Builders,timing,Honestly the timing was wrong; we're revisiting next year.
-D07,Northgate Retail,price,Proposals came back slowly and we lost confidence you could support us.
-D08,Silverleaf Hotels,price,
-D09,Cobalt Freight,price,Your team took over a week to answer our security questions; the other vendor replied the same day.
-D10,Juniper Health,price,We asked twice for a demo with our ops lead and it kept slipping. We moved on.
-D11,Redwood Legal,price,
-D12,Fairhaven Schools,price,
-D13,Atlas Dental,missing feature,
-D14,Bluefin Marine,price,
-D15,Granite Insurance,lost to competitor,They had an existing relationship with our CFO.
-D16,Lumen Studios,price,
-D17,Verity Payroll,price,No Xero integration meant our accountants would re-key everything.
-D18,Kestrel Energy,lost to competitor,
-D19,Mosaic Events,no decision,We never got it on the leadership agenda.
-D20,Quarry Tools,price,The person who brought you in moved to another team; we paused all new tools.
+deal,company,outcome,seller_reason
+D01,Harbor Logistics,lost,price
+D02,Pinecrest Foods,lost,price
+D03,Tallow & Co,lost,price
+D04,Meridian Clinics,lost,timing
+D05,Brightwave Media,lost,missing feature
+D06,Oakline Builders,lost,price
+D07,Northgate Retail,lost,price
+D08,Silverleaf Hotels,lost,lost to competitor
+D09,Cobalt Freight,lost,price
+D10,Juniper Health,lost,price
+D11,Redwood Legal,lost,price
+D12,Fairhaven Schools,lost,price
+D13,Atlas Dental,lost,price
+D14,Bluefin Marine,lost,price
+D15,Granite Insurance,lost,lost to competitor
+D16,Lumen Studios,lost,no budget
+D17,Verity Payroll,lost,price
+D18,Kestrel Energy,lost,no decision
+D19,Mosaic Events,lost,price
+D20,Quarry Tools,lost,price

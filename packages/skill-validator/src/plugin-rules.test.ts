@@ -561,6 +561,9 @@ describe("workflow-handoff", () => {
 	it("asks 'just this step or the whole workflow' only in the first-phase variant", () => {
 		expect(EMPATHIZE_HANDOFF).toContain('"Just this step, or the whole Design Thinking workflow?"');
 		expect(handoffParagraph(fields)).toContain("a later phase runs on its own, behind its gate");
+		expect(handoffParagraph({ ...fields, ungated: true })).toContain(
+			"this one has no gate, since it needs no earlier artifact",
+		);
 		expect(handoffParagraph(fields)).not.toContain("Just this step");
 	});
 
