@@ -24,10 +24,10 @@ Architecture background goes last. A runbook nobody has run is a draft: say when
 
 ## The blameless review
 
-A blameless review looks for systemic contributing factors, assumes people acted well on the information they had, and asks how the system can **mislead** an operator: where it misled this one, or asked too much of them (Google SRE Book, *Postmortem Culture*, https://sre.google/sre-book/postmortem-culture).
+A blameless review looks for systemic contributing factors, assumes people acted well on the information they had, and asks how the system can **mislead** an operator: where it misled this one, or asked too much of them (Google SRE Book, *Postmortem Culture*, https://sre.google/sre-book/postmortem-culture). Treating "human error" as where an investigation starts, and asking why the system made the action reasonable at the time, comes from safety science (Dekker, *The Field Guide to Understanding 'Human Error'*, 3rd ed., 2014).
 
 - **People by role,** never by name: "the on-call engineer", "the deploying engineer".
-- **Contributing factors, not one root cause.** Incidents have several causes; single-cause reasoning hides systemic contributors (Okwesa, 2026, *International Journal of Social Sciences and Management Research*: "Root-Cause and Thematic Analysis for Major Incident Management: A Review").
+- **Contributing factors, not one root cause.** Failures in complex systems need several flaws to line up, so there is no single root cause (Cook, *How Complex Systems Fail*, 1998); single-cause reasoning hides systemic contributors (Okwesa, 2026, *International Journal of Social Sciences and Management Research*: "Root-Cause and Thematic Analysis for Major Incident Management: A Review").
 - **Human error is a starting point, not a finding.** When a person did something that caused harm, ask what made it easy to do and hard to notice: a tool that accepted it without confirmation, an alert that fired late, a runbook that was out of date.
 - **What went well,** so it is kept.
 - **Action items change the system or the process,** each with an owner and a date. "Be more careful", retraining or discipline is never the fix for a systemic gap.

@@ -30,7 +30,7 @@ Read `.singularskills/ops/<project>/01-inventory.md` for the services, tiers and
 
 2. **Define an SLI per journey** as **good events ÷ valid events**: availability, latency at a percentile and threshold, correctness or freshness, whichever users notice. Say exactly which events count as valid (excluding health checks and bots) and where the data comes from.
 
-3. **Set the SLO:** the target and the window (a rolling 28 or 30 days unless the business needs calendar months), each labelled `target`. Aim below what users would notice and above what the service already achieves only if the team can afford it; with past data, compute current attainment and say so.
+3. **Set the SLO:** the target and the window (a rolling 28 or 30 days unless the business needs calendar months), each labelled `target`. Set the target where users would start to notice failures; raise it above what the service already achieves only if the team can afford the work. With past data, compute current attainment and say so.
 
 4. **Compute the error budget** with a script written to `.singularskills/ops/<project>/` and included beside the result: 1 − target, in time over the window and in failed requests per thousand. Scripts read the user's files where they keep them and write results under `.singularskills/`.
 
