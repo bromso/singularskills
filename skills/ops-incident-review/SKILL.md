@@ -13,7 +13,7 @@ Write the review of the incident in "$ARGUMENTS" so the team learns from it, as 
 
 ## Prerequisites
 
-The record: the timeline, chat log, alerts, graphs and notes the user supplies, as files or pastes. When `$ARGUMENTS` or the request names a project, use that name as `<project>` whether or not its folder exists yet in `.singularskills/ops/` (create it when you write). With no project named: with exactly one folder there, use it; with several, ask which; with no folder at all, ask for a project name. Read `.singularskills/ops/<project>/02-slos.md` and `04-runbooks.md` when they exist.
+The record: the timeline, chat log, alerts, graphs and notes the user supplies, as files or pastes. When `$ARGUMENTS` or the request names a project, use that name as `<project>` whether or not its folder exists yet in `.singularskills/ops/` (create it when you write). With no project named: with exactly one folder there, use it; with several, ask which; with no folder at all, name the project after the affected service in the record (for example `checkout`) and say so in Decisions. Read `.singularskills/ops/<project>/02-slos.md` and `04-runbooks.md` when they exist.
 
 Append this line to `.singularskills/log.jsonl` before you write the review (create the folder and file if missing): `{"ts":"<ISO timestamp>","skill":"ops-incident-review","workflow":"ops","phase":null,"project":"<project>","event":"started","artifact":"incidents/<date>-<slug>.md","note":""}`, where `<date>` is today as `YYYY-MM-DD` and `<slug>` is two to four words naming the topic, never a person.
 

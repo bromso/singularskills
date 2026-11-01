@@ -1,5 +1,5 @@
 time,alert,state,value
-2026-10-14T14:04:00,CheckoutErrorRateHigh,pending,2.1%
+2026-10-14T14:04:00,CheckoutErrorRateHigh,pending,5.6%
 2026-10-14T14:09:00,CheckoutErrorRateHigh,pending,9.8%
 2026-10-14T14:14:00,CheckoutErrorRateHigh,firing,31.0%
 2026-10-14T14:42:00,CheckoutErrorRateHigh,resolved,0.08%
