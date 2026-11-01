@@ -29,7 +29,21 @@ Data, all synthetic:
 | --- | --- | --- | --- | --- | --- |
 | 1 | 0.5 | 0 | 0.5 | 1/2 | $0.67 |
 | 2, after making grader 4 explicit | 1 | 1 | 0 | 2/2 | $0.84 |
+| 3, redesigned case (follow-up), 3 runs per arm | 1 | 1 | 0 | 1/3 | $1.07 |
 
 - **Run 1.** The run that used the skill failed all three judge votes on an answer that meets every criterion as written. The judge's reasons were not kept. The with-skill run in which the skill did not fire passed.
 - **The grader fix.** Grader 4 was ambiguous about a script the model wrote but could not run, and now says so explicitly.
 - **Run 2.** In 2 runs per arm, the case did **not** separate the skill from plain Claude (n=2 proves neither separation nor its absence). With the seller's reasons and the buyer debriefs side by side in one file, plain Claude also declines the price cut. Redesigning the case so the buyer evidence is not laid out next to the seller's reasons is deferred to the follow-up, as was done for `support-reply`.
+
+## Follow-up: redesigned case (run 3)
+
+The follow-up split the evidence the way teams usually hold it:
+- `lost-deals.csv` holds only the reasons reps logged.
+- `debriefs/` holds ten buyer notes, one file per company rather than per deal ID. Two of them mention price but say it was not decisive.
+- Each arm now has three runs.
+
+All six runs passed, with and without the pack: plain Claude matched the debriefs by company, did not count the two price mentions, and declined the price cut. Two conclusions:
+- **The verdict.** On this task the right answer is within reach without the skill, so the eval measures no difference there. What the skill adds is structure: a saved review in `playbook/win-loss/`, seller and buyer accounts kept apart, an owner for each change, and an interview guide for deals with no buyer input. The judge does not grade those.
+- **Routing.** The skill fired in only 1 of 3 with-pack runs. A question phrased as "should we cut prices?" is usually answered directly.
+
+The case is kept as it is: it is harder and more realistic than the first one, and it records that baseline competence. Further reshaping it until the skill wins was ruled out.
