@@ -85,6 +85,7 @@ describe("constants", () => {
 		expect(COMPUTE_PLUGINS.has("analytics")).toBe(true);
 		expect(COMPUTE_PLUGINS.has("ai")).toBe(true);
 		expect(COMPUTE_PLUGINS.has("sales")).toBe(true);
+		expect(COMPUTE_PLUGINS.has("ops")).toBe(true);
 	});
 });
 

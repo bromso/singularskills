@@ -36,6 +36,7 @@ export const COMPUTE_PLUGINS = new Set([
 	"analytics",
 	"ai",
 	"sales",
+	"ops",
 ]);
 
 const FENCE = /^\s*(```|~~~)/;
