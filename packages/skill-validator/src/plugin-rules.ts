@@ -214,6 +214,10 @@ export const HANDOFF_TAIL_FIRST =
 export const HANDOFF_TAIL_LATER =
 	" Otherwise continue here: a later phase runs on its own, behind its gate.";
 
+/** The tail of a later-phase member that requires nothing, and so has no gate. */
+export const HANDOFF_TAIL_UNGATED =
+	" Otherwise continue here: a later phase runs on its own; this one has no gate, since it needs no earlier artifact.";
+
 export type HandoffFields = {
 	phase: number;
 	phaseTitle: string;
@@ -221,13 +225,15 @@ export type HandoffFields = {
 	workflowName: string;
 	/** Whether the phase is the first of its workflow. */
 	first: boolean;
+	/** Whether a later phase requires nothing, and so has no gate. */
+	ungated?: boolean;
 };
 
 /** The handoff paragraph for one member. */
 export function handoffParagraph(fields: HandoffFields): string {
 	const text = HANDOFF_PARAGRAPH.replace(
 		"<tail>",
-		fields.first ? HANDOFF_TAIL_FIRST : HANDOFF_TAIL_LATER,
+		fields.first ? HANDOFF_TAIL_FIRST : fields.ungated ? HANDOFF_TAIL_UNGATED : HANDOFF_TAIL_LATER,
 	);
 	return text
 		.replace("<phase>", () => String(fields.phase))
@@ -464,6 +470,7 @@ function checkWorkflowHandoff(parsed: ParsedSkill, ctx: PackContext): Validation
 		workflowTitle: workflow.title,
 		workflowName: workflow.name,
 		first: phase === workflow.phases[0],
+		ungated: phase !== workflow.phases[0] && phase.requires.length === 0,
 	});
 	if (firstPrerequisiteLine(parsed.body) === expected) return [];
 	return [

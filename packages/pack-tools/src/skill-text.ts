@@ -164,9 +164,13 @@ export function handoffParagraph(member: Member): string {
 	// The first phase of a workflow is where a trail starts: ask whether the person wants the
 	// whole workflow. A later phase runs on its own, guarded by its gate.
 	const first = phase === workflow.phases[0];
+	// A later phase that requires nothing has no gate (gen-gates writes none), so say so.
+	const ungated = !first && phase.requires.length === 0;
 	const tail = first
 		? ` Otherwise, unless the user named this skill, ask one question, since this is the first phase of its workflow: "Just this step, or the whole ${workflow.title} workflow?" End your turn and wait; on the whole workflow, hand off the same way; on just this step, continue here.`
-		: " Otherwise continue here: a later phase runs on its own, behind its gate.";
+		: ungated
+			? " Otherwise continue here: a later phase runs on its own; this one has no gate, since it needs no earlier artifact."
+			: " Otherwise continue here: a later phase runs on its own, behind its gate.";
 	return common + tail;
 }
 
