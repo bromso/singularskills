@@ -1,5 +1,5 @@
 ---
-description: "Evaluate an AI feature on its real outputs — error analysis first (notes on each output, failure groups counted), confirmed by a person, then checks per confirmed group with judges validated against human labels and results per check. Use when the feature is built and the team needs to know how well it works. Not for checking one AI judge; see the judge check skill."
+description: "Evaluate an AI feature on its real outputs — error analysis first (notes on each output, failure groups counted), confirmed by a person, then checks per confirmed group with judges validated against human labels and results per check. Use when the feature is built and the team needs to know how well it works. Not for checking one AI judge; see /ai-judge-check."
 argument-hint: "[project] [--skip-checks]"
 ---
 

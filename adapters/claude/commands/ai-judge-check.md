@@ -1,0 +1,6 @@
+---
+description: "Check an AI judge against human labels — agreement, true-positive rate and true-negative rate from the four cells of the agreement table, the disagreements listed — and say whether the judge can be trusted for its check, and how to fix its prompt if not. Use when a team wants to rely on an LLM judge instead of reviewing outputs by hand. Not for evaluating the feature itself; see /ai-evaluate."
+argument-hint: "<labels file> [project]"
+---
+
+Use the `ai-judge-check` skill with these arguments: $ARGUMENTS

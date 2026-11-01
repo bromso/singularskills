@@ -1,6 +1,6 @@
 ---
 name: ai-evaluate
-description: Evaluate an AI feature on its real outputs — error analysis first (notes on each output, failure groups counted), confirmed by a person, then checks per confirmed group with judges validated against human labels and results per check. Use when the feature is built and the team needs to know how well it works. Not for checking one AI judge; see the judge check skill.
+description: Evaluate an AI feature on its real outputs — error analysis first (notes on each output, failure groups counted), confirmed by a person, then checks per confirmed group with judges validated against human labels and results per check. Use when the feature is built and the team needs to know how well it works. Not for checking one AI judge; see /ai-judge-check.
 metadata:
   argument-hint: "[project] [--skip-checks]"
   workflow: ai
@@ -36,7 +36,7 @@ If `.singularskills/ai/<project>/06-evaluate.md` already exists, keep it as `06-
 
 4. **Turn each confirmed group into a check,** ranked by count and harm: a plain check (a rule code can test) for clear-cut failures, an AI judge with written pass/fail criteria for judgement calls. Fix-now items (a missing instruction, a wrong document) become fixes, not checks. Add the new rows to the test set.
 
-5. **Validate every AI judge** against human labels the team supplies on the same outputs: agreement, true-positive rate and true-negative rate, as `references/evaluation.md` shows. Never invent human labels; with none, mark the judge **not validated**.
+5. **Validate every AI judge** with `/ai-judge-check`, against human labels the team supplies on the same outputs: agreement, true-positive rate and true-negative rate, as `references/evaluation.md` shows. Never invent human labels; with none, mark the judge **not validated**.
 
 6. **Report results per check:** pass rate with the sample size, `computed`, or `not measured` when the check has not been run on outputs yet; the comparison with the previous evaluation when one was kept.
 

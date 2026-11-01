@@ -30,7 +30,7 @@ Defences, layered because none is complete:
 - **least privilege** for tools: the model gets only the tools and data the job needs, with the narrowest permissions.
 - **Confirmation** before any action with side effects (sending, deleting, paying, changing records).
 - **Output checks**: block outputs that contain secrets, personal data or links the feature should never produce.
-- Attack tests before launch and after every change (the domain's red-team skill).
+- Attack tests before launch and after every change (`/ai-red-team`).
 
 ## Hallucination
 
