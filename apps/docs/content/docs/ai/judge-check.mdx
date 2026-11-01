@@ -1,0 +1,36 @@
+---
+title: Judge Check
+description: Check whether an AI judge can be trusted, against human labels.
+command: "/ai-judge-check <labels file>"
+kind: utility
+---
+
+## Purpose
+
+The Judge Check skill compares an AI judge's verdicts with human labels. It judges the judge on the failures it catches first, because agreement alone misleads when most outputs pass.
+
+## Usage
+
+**Example:**
+```
+/ai-judge-check <labels file>
+```
+
+## Prerequisites
+
+Rows of output ID, human verdict and judge verdict. Human labels are never invented.
+
+## What It Does
+
+<Steps>
+<Step>Counts the four cells of the agreement table</Step>
+<Step>Computes agreement, true-positive and true-negative rates, or shows the counts when it cannot run code</Step>
+<Step>Says when there are too few labels to judge</Step>
+<Step>Lists the disagreements and how to fix the judge</Step>
+</Steps>
+
+## Output
+
+<Output>
+Creates `.singularskills/ai/<project>/judges/<date>-<slug>.md`.
+</Output>

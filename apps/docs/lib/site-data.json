@@ -13,6 +13,12 @@
 			"hasEvals": true
 		},
 		{
+			"slug": "ai",
+			"name": "ai",
+			"skills": 12,
+			"hasEvals": true
+		},
+		{
 			"slug": "analytics",
 			"name": "analytics",
 			"skills": 10,
@@ -121,6 +127,11 @@
 			"phases": 8
 		},
 		{
+			"name": "ai",
+			"title": "AI Feature Lifecycle",
+			"phases": 8
+		},
+		{
 			"name": "analytics",
 			"title": "Decision Analytics Cycle",
 			"phases": 6
@@ -217,9 +228,9 @@
 		}
 	],
 	"totals": {
-		"skills": 303,
-		"plugins": 18,
-		"evalSuites": 18,
+		"skills": 315,
+		"plugins": 19,
+		"evalSuites": 19,
 		"agents": 7
 	}
 }

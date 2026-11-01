@@ -1,0 +1,48 @@
+---
+title: "Phase 7: Ship"
+description: Set the launch bar, keep human review where it is needed, and decide launch, hold or fix.
+command: "/ai-ship <project>"
+kind: phase
+---
+
+## Purpose
+
+The Ship phase decides whether the feature can go live and how: the bar per check, human review, rollout, kill switch and compliance.
+
+## Usage
+
+**Example:**
+```
+/ai-ship helpbot
+```
+
+## Prerequisites
+
+Requires `.singularskills/ai/<project>/06-evaluate.md`. Use `--skip-checks` to bypass.
+
+## What It Does
+
+<Steps>
+<Step>Sets the launch bar per check, higher for worse harms</Step>
+<Step>Keeps human review wherever a check is below its bar</Step>
+<Step>Plans the rollout stages and the kill switch</Step>
+<Step>Names the compliance skills that apply</Step>
+<Step>Decides launch, hold or fix, with the evidence</Step>
+<Step>Writes `.singularskills/ai/<project>/07-ship.md`</Step>
+</Steps>
+
+## Output
+
+<Output>
+Creates `.singularskills/ai/<project>/07-ship.md` containing:
+
+- Launch bar
+- Human review
+- Rollout and kill switch
+- Compliance
+- Decision
+</Output>
+
+## Next Phase
+
+<NextPhase href="/docs/ai/monitor" title="Monitor">After Ship, continue with Monitor.</NextPhase>

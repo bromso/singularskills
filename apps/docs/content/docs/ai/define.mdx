@@ -1,0 +1,48 @@
+---
+title: "Phase 1: Define"
+description: Define what the AI feature must do, whether AI is the right tool, and what would make it fail.
+command: "/ai-define <project>"
+kind: phase
+---
+
+## Purpose
+
+The Define phase pins down the job, the success criteria and the failure modes before anyone writes a prompt, including whether AI is needed at all.
+
+## Usage
+
+**Example:**
+```
+/ai-define helpbot
+```
+
+## Prerequisites
+
+None — this is the first phase.
+
+## What It Does
+
+<Steps>
+<Step>Reads research, support and analytics artifacts for users and agreed metrics</Step>
+<Step>Describes the job: user, moment, input, output, next step</Step>
+<Step>Checks whether a rule, search or form would do the job instead</Step>
+<Step>Writes success criteria a check could test, and the failure modes with their harm</Step>
+<Step>Sets latency and cost budgets</Step>
+<Step>Writes `.singularskills/ai/<project>/01-define.md`</Step>
+</Steps>
+
+## Output
+
+<Output>
+Creates `.singularskills/ai/<project>/01-define.md` containing:
+
+- Job
+- Is AI the right tool?
+- Success criteria
+- Failure modes
+- Budgets
+</Output>
+
+## Next Phase
+
+<NextPhase href="/docs/ai/approach" title="Approach">After Define, continue with Approach.</NextPhase>

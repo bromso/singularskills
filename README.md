@@ -9,7 +9,7 @@
 [![Gemini CLI](https://img.shields.io/badge/Gemini_CLI-Compatible-4285F4?logo=googlegemini&logoColor=white)](https://github.com/google-gemini/gemini-cli)
 [![Bun](https://img.shields.io/badge/Bun-1.3-fbf0df?logo=bun&logoColor=000)](https://bun.sh)
 
-One pack of agent skills for digital production work: **303 skills across 18 domains**, from design and research to legal, security and accounting. Each skill is a plain `SKILL.md` folder that any agent supporting the Agent Skills format can load.
+One pack of agent skills for digital production work: **315 skills across 19 domains**, from design and research to legal, security and accounting. Each skill is a plain `SKILL.md` folder that any agent supporting the Agent Skills format can load.
 
 What you get:
 
@@ -71,6 +71,7 @@ Then try a skill (the Claude Code and Gemini CLI command form; other agents pick
 | [Design](https://bromso.github.io/singularskills/docs/design) | Design Thinking | 9 | Component design from research to usability test |
 | [Research](https://bromso.github.io/singularskills/docs/research) | Double Diamond | 4 | Structured discovery and validation |
 | [Analytics](https://bromso.github.io/singularskills/docs/analytics) | Decision Analytics Cycle | 10 | Decision-led metrics, data checks, analysis, dashboards and experiment readouts |
+| [AI Product](https://bromso.github.io/singularskills/docs/ai) | AI Feature Lifecycle | 12 | Design, build, evaluate, ship and monitor AI features in a product |
 | [Development](https://bromso.github.io/singularskills/docs/development) | Dev Workflow | 6 | Plan, build, test, debug, review, ship |
 | [Marketing](https://bromso.github.io/singularskills/docs/marketing) | RACE Framework | 37 | Full growth marketing lifecycle |
 | [Support](https://bromso.github.io/singularskills/docs/support) | Support Operations Cycle | 10 | Support journey, taxonomy, macros, escalation, SLAs and account health |

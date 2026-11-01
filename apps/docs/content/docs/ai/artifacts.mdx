@@ -1,0 +1,33 @@
+---
+title: Artifacts
+description: What each AI Product phase produces and the purpose of each artifact.
+kind: overview
+---
+
+## Phase Artifacts
+
+| Phase | File | What It Contains |
+|-------|------|-----------------|
+| Define | `01-define.md` | Job, whether AI is the right tool, testable success criteria, failure modes with harm, latency and cost budgets |
+| Approach | `02-approach.md` | Options compared, the chosen approach and why, content, tools and data, model criteria, risks |
+| Prompt and context | `03-prompt.md` | Versioned system prompt, context assembly with untrusted input marked, examples, refusal rules, injection defences |
+| Experience | `04-experience.md` | Disclosure, sources, uncertainty, correction, fallback, feedback, slow and down states |
+| Build | `05-build.md` | Components, prompt files, retrieval or tools, configuration, logging, initial test set, hand-off |
+| Evaluate | `06-evaluate.md` | Outputs used, per-output notes, failure groups (confirmed or proposed), checks, results per check |
+| Ship | `07-ship.md` | Launch bar, human review, rollout and kill switch, compliance, decision |
+| Monitor | `08-monitor.md` | Logging, signals and thresholds, the latest review, change rule, cost and latency |
+
+Re-running Evaluate or Monitor first keeps the previous file as `06-evaluate-<date>.md` or `08-monitor-<date>.md`, so the evidence a decision rested on is never lost. A bypassed prerequisite (`--skip-checks`) is recorded as a `skipped` line in `.singularskills/log.jsonl`.
+
+## Utility Artifacts
+
+| Skill | File | What It Contains |
+|-------|------|-----------------|
+| Red Team | `red-team/<date>-<slug>.md` | Attack surface, attacks with safe responses, what to test first |
+| Judge Check | `judges/<date>-<slug>.md` | Agreement table, rates, verdict, disagreements, fix |
+
+`/ai-prompt-review` and `/ai-model-compare` write no file.
+
+## Personal Data
+
+Scripts write aggregates. Three artifacts list individual outputs by row or output ID with a short quote: the Evaluate notes, the judge disagreements, and the red-team inputs. Names, emails, phone numbers and account IDs in those quotes are always replaced with placeholders.

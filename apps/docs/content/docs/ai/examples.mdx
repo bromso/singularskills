@@ -1,0 +1,66 @@
+---
+title: Examples
+description: End-to-end walkthrough of adding a support chatbot that answers from a help centre.
+kind: overview
+---
+
+## Scenario: A Help-Centre Chatbot
+
+You run product at "Loomly Studio", an online pottery-class subscription. Support answers the same thirty questions every day, all covered by the help centre. You want a chatbot that answers from the help centre and hands over to a person when it cannot.
+
+### Phase 1: Define
+
+```
+/ai-define helpbot
+```
+
+**Sample output snippet:**
+> **Is AI the right tool?** Search alone finds the article but not the answer to "can I move my class if I'm ill?"; AI is justified for answering in the customer's words, with the article cited.
+> **Failure mode — made-up policy (harm: high):** the bot states a refund rule the help centre does not contain.
+
+### Phases 2–4
+
+```
+/ai-approach helpbot
+/ai-prompt-design helpbot
+/ai-experience helpbot
+```
+
+**Sample output snippet:**
+> **Approach:** retrieval over the help centre; prompt only was not enough because policies change monthly.
+> **Injection defence:** help-centre articles are delimited as data; the bot has no tools, so a planted instruction cannot act.
+
+### Phase 5: Build
+
+```
+/ai-build helpbot
+```
+
+> **Next:** run `/development-plan helpbot`, then `/development-build helpbot`.
+
+### Phase 6: Evaluate
+
+```
+/ai-evaluate helpbot
+```
+
+**Sample output snippet:**
+> **Proposed failure groups (computed, 100 outputs):** made-up policy 12, wrong tone 8, repeats the customer's email 3. Awaiting confirmation by the support lead.
+
+### Phases 7–8
+
+```
+/ai-ship helpbot
+/ai-monitor helpbot
+```
+
+**Sample output snippet:**
+> **Decision: hold.** Made-up policy passes 88% against a 99% bar; billing questions keep human review.
+
+### Any time: can we trust our judge?
+
+```
+/ai-judge-check judge-labels.csv helpbot
+```
+
+The judge check looks at the failures first: a judge that agrees with you 85% of the time but passes almost every answer you failed is not ready to replace review.
