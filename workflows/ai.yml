@@ -1,0 +1,44 @@
+name: ai
+title: AI Feature Lifecycle
+folder: ai
+phases:
+  - phase: 1
+    title: Define
+    artifact: 01-define.md
+    requires: []
+    skills: [ai-define]
+  - phase: 2
+    title: Approach
+    artifact: 02-approach.md
+    requires: [01-define.md]
+    skills: [ai-approach]
+  - phase: 3
+    title: Prompt and context
+    artifact: 03-prompt.md
+    requires: [01-define.md, 02-approach.md]
+    skills: [ai-prompt-design]
+  - phase: 4
+    title: Experience
+    artifact: 04-experience.md
+    requires: [01-define.md, 02-approach.md]
+    skills: [ai-experience]
+  - phase: 5
+    title: Build
+    artifact: 05-build.md
+    requires: [03-prompt.md, 04-experience.md]
+    skills: [ai-build]
+  - phase: 6
+    title: Evaluate
+    artifact: 06-evaluate.md
+    requires: [01-define.md, 05-build.md]
+    skills: [ai-evaluate]
+  - phase: 7
+    title: Ship
+    artifact: 07-ship.md
+    requires: [06-evaluate.md]
+    skills: [ai-ship]
+  - phase: 8
+    title: Monitor
+    artifact: 08-monitor.md
+    requires: [07-ship.md]
+    skills: [ai-monitor]

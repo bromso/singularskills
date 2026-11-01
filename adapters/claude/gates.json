@@ -14,6 +14,15 @@
 		"07": ["06-adjusted-balance.md"],
 		"08": ["06-adjusted-balance.md", "07-statements.md"]
 	},
+	"ai": {
+		"02": ["01-define.md"],
+		"03": ["01-define.md", "02-approach.md"],
+		"04": ["01-define.md", "02-approach.md"],
+		"05": ["03-prompt.md", "04-experience.md"],
+		"06": ["01-define.md", "05-build.md"],
+		"07": ["06-evaluate.md"],
+		"08": ["07-ship.md"]
+	},
 	"analytics": {
 		"02": ["01-questions.md"],
 		"03": ["02-metrics.md"],

@@ -1,0 +1,2 @@
+description = "Write the build spec for an AI feature — components, prompt files, retrieval pipeline or tool definitions, configuration, logging, and an initial test set from the failure modes — ready for the development workflow to implement. Use when the prompt and experience are designed and the feature needs building. Not for writing the code itself; see /development-plan."
+prompt = "Use the ai-build skill with these arguments: {{args}}"
