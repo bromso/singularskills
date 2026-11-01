@@ -15,7 +15,7 @@ Find out whether the AI judge in "$ARGUMENTS" can be trusted to replace people f
 
 The labels: rows with an output ID, the human's verdict and the judge's verdict (pass or fail), as a file or a paste. Never invent or fill in human labels; rows without a human label are left out and counted. When `$ARGUMENTS` or the request names a project, use that name as `<project>` whether or not its folder exists yet in `.singularskills/ai/` (create it when you write). With no project named: with exactly one folder there, use it; with several, ask which; with no folder at all, ask for a project name.
 
-Read `.singularskills/ai/<project>/06-evaluate.md` for the check this judge serves and its criteria, when it exists.
+Read `.singularskills/ai/<project>/06-evaluate.md` for the check this judge serves and its criteria, when it exists. `references/evaluation.md` holds the agreement table, the trust bar and the label minimum this skill applies.
 
 Append this line to `.singularskills/log.jsonl` before you write the check (create the folder and file if missing): `{"ts":"<ISO timestamp>","skill":"ai-judge-check","workflow":"ai","phase":null,"project":"<project>","event":"started","artifact":"judges/<date>-<slug>.md","note":""}`, where `<date>` is today as `YYYY-MM-DD` and `<slug>` is two to four words naming the check, never a person.
 
@@ -32,7 +32,7 @@ Append this line to `.singularskills/log.jsonl` before you write the check (crea
 
 2. **Compute the rates:** agreement (a + d) ÷ all; true-positive rate a ÷ (a + c); true-negative rate d ÷ (b + d). **Without a way to run code**, show the four cell counts, label every rate `not computed`, and judge from the counts: for example, "the judge passed 6 of the 7 outputs people failed".
 
-3. **Check there are enough labels:** with fewer than 10 human-labelled fails, or fewer than 30 labelled rows, there are **too few** labels to approve the judge. Say so, give the counts, and ask for more labels. Too few labels stops you approving a judge, never rejecting one: if the judge already passed more than half of the outputs people failed, the verdict is **do not trust**, whatever the label count.
+3. **Check there are enough labels:** with fewer than 10 human-labelled fails, or fewer than 30 labelled rows, there are **too few** labels to approve the judge. Say so, give the counts, and ask for more labels. Too few labels stops you approving a judge, never rejecting one: if the judge already passed more than half of the outputs people failed, or rejected more than half of the outputs people passed, the verdict is **do not trust, and too few labels**: get more labels before changing the judge's prompt, so the fix is not tuned to a handful of rows.
 
 4. **Judge the judge** on the true-negative rate first, then the true-positive rate:
    - **trust** — true-negative rate at least 0.8 and true-positive rate at least 0.8, with enough labels (step 3); for a check guarding a high-harm failure, raise the true-negative bar to 0.9 (the pack's call, stated in the check)
@@ -41,7 +41,7 @@ Append this line to `.singularskills/log.jsonl` before you write the check (crea
 
 5. **List the disagreements** (cells b and c) by output ID with a short redacted quote, and what they have in common.
 
-6. **Say how to fix the judge** when it is not trusted: sharpen its pass/fail criteria around the missed failures, add those rows as examples in its prompt, then re-check it against fresh labels.
+6. **Say how to fix the judge** when it is not trusted and there are enough labels (with too few, the fix is more labels first): sharpen its pass/fail criteria around the missed failures, add those rows as examples in its prompt, then re-check it against fresh labels.
 
 7. **Write the check** to `.singularskills/ai/<project>/judges/<date>-<slug>.md` with sections **Check**, **Agreement table**, **Rates**, **Verdict**, **Disagreements** and **Fix**.
 

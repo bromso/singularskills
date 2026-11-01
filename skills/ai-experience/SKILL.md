@@ -22,7 +22,7 @@ Design what users of the AI feature in "$ARGUMENTS" see and can do when it is ri
 
 Run this skill's gate before writing: `sh <this skill's folder>/scripts/gate.sh <project> <project root>`, where `<project root>` is the folder that contains `.singularskills/` (use `.` when you are already there). If it exits non-zero, stop and tell the user what it printed, unless `--skip-checks` was given (see Arguments). On a refusal, before you stop, append this line to `.singularskills/log.jsonl` (create the folder and file if missing): `{"ts":"<ISO timestamp>","skill":"ai-experience","workflow":"ai","phase":4,"project":"<project>","event":"refused","artifact":"04-experience.md","note":"<what the gate printed>"}`. Once the gate has passed, or under `--skip-checks` once you have appended the `skipped` line, append this line before you start work: `{"ts":"<ISO timestamp>","skill":"ai-experience","workflow":"ai","phase":4,"project":"<project>","event":"started","artifact":"04-experience.md","note":""}`.
 
-Read `.singularskills/ai/<project>/01-define.md` for the job and failure modes and `.singularskills/ai/<project>/02-approach.md` for what the feature can do.
+Read `.singularskills/ai/<project>/01-define.md` for the job and failure modes and `.singularskills/ai/<project>/02-approach.md` for what the feature can do. Read `.singularskills/ai/<project>/03-prompt.md` for the refusal and uncertainty rules when it exists.
 
 ## Process
 
@@ -30,7 +30,7 @@ Read `.singularskills/ai/<project>/01-define.md` for the job and failure modes a
 
 2. **Sources:** how the feature shows where an answer came from, so users can check it.
 
-3. **Uncertainty:** what users see when the model is unsure: a hedge, a clarifying question, or a handover, matching phase 3's refusal and uncertainty rules.
+3. **Uncertainty:** what users see when the model is unsure: a hedge, a clarifying question, or a handover, matching the refusal and uncertainty rules in `03-prompt.md` when it exists, or setting them for phase 3 to follow.
 
 4. **Correction and undo:** how users fix a wrong answer, edit an output before using it, or undo an action the feature took.
 

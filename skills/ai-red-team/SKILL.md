@@ -2,7 +2,7 @@
 name: ai-red-team
 description: Plan attack tests for an AI feature — direct and indirect prompt injection, jailbreaks, system-prompt and data leakage, tool misuse — each with a test input and what a safe response looks like. Use when a team wants to know how its AI feature could be misused before launch or after a change. Not for a security testing programme; see /security-security-testing.
 metadata:
-  argument-hint: "<feature or project> [project]"
+  argument-hint: "[project] [feature]"
 ---
 
 # Red team
@@ -21,7 +21,7 @@ Append this line to `.singularskills/log.jsonl` before you write the plan (creat
 
 ## Process
 
-1. **Map what an attacker can reach:** every input the model reads (the user's message, **retrieved** documents, web pages, emails, tool results), every tool it can call and what each can change, and the data it can see.
+1. **Map what an attacker can reach**, using the injection and leakage patterns in `references/prompt-and-context.md`: every input the model reads (the user's message, **retrieved** documents, web pages, emails, tool results), every tool it can call and what each can change, and the data it can see.
 
 2. **Write the attacks,** at least three per category that applies, each with a test input and the safe response. Test inputs use placeholders (`[EMAIL]`, `[ACCOUNT]`) or invented data, never personal data copied from the team's content, logs or outputs:
    - **Direct prompt injection** — the user's message tries to override the instructions
