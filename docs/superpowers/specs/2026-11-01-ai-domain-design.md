@@ -6,7 +6,11 @@ shortlist saved on 2026-10-31. This time the owner took the brainstorm
 questions (2026-11-01). Decisions marked *(owner)* are theirs; everything else
 is the controller's call, made from the research summarised in §6 (Consensus,
 Context7 and a web search, run at the owner's suggestion) and from the
-patterns of the earlier domains.
+patterns of the earlier domains. A builder check on 2026-11-01 raised five
+questions. The owner asked for the controller's recommendation on the two that
+change what gets built, and those are marked *(owner asked for the
+recommendation)*. The other three are marked *(builder-check answer,
+controller's call)*.
 
 ## 1. Intent
 
@@ -59,9 +63,18 @@ three.
 - **The skills do not write the feature's code.** Phase 5 writes a build spec
   (prompt files, context and retrieval design, tool definitions, the test
   set) and hands it to `/development-plan`, then `/development-build`. The
-  development domain writes the code. *(Controller's call; the owner's answer
-  "looks good" did not choose between writing the code and handing it off.
-  This is flagged for the owner in the hand-over.)*
+  development domain writes the code. *(Owner asked for the recommendation.)*
+  How the handoff works:
+  - `ai-build` ends by telling the user to run `/development-plan <project>`
+    with the **same project name**, then `/development-build`. It does not
+    invoke them itself.
+  - The `ai` run stays open: the conductor stops at every phase boundary
+    anyway, and phase 6 says it needs outputs from the built feature.
+  - `ai-evaluate` reads `.singularskills/development/<project>/` when it
+    exists (the reason `development` is in `CROSS_DOMAIN_READS`) and names
+    what was built. A gate cannot require another domain's artifact, so this
+    check lives in the skill's own text.
+  *(Builder-check answer, controller's call.)*
 - **The skills never run the AI feature or any model.** They work from the
   prompts, outputs, logs, test results and human labels the team supplies.
 - **No regulatory assessment.** That is `/compliance-eu-ai-act`,
@@ -138,13 +151,20 @@ Its artifacts go in `.singularskills/ai/<project>/`. Its methodology name is
    the initial test set drawn from phase 1's failure modes. It hands off to
    `/development-plan`, then `/development-build`.
 6. **Evaluate** (`ai-evaluate`). Error analysis first, as practitioners
-   recommend:
-   - Someone who knows the domain reads a sample of real outputs the team
-     supplies (aim for about 100), notes problems, groups them and counts each
-     group, computed with a script.
+   recommend. **Claude does the first pass and a person confirms it**
+   *(owner asked for the recommendation)*:
+   - When the team supplies its own notes per output, Claude uses them.
+     Otherwise Claude reads a sample of real outputs the team supplies (aim
+     for about 100), writes a one-line note on each, and proposes failure
+     groups with counts, computed with a script.
+   - The skill then stops and asks a person who knows the domain to confirm,
+     merge, split or rename the groups.
+   - Under `--skip-checks`, or with no answer, the groups are written as
+     **proposed** and no check is built from a proposed group.
    - The top groups become checks: plain checks for clear-cut failures, an AI
      judge for judgement calls, pass/fail rather than scales.
    - Any AI judge is validated against human labels (`/ai-judge-check`).
+     Claude never invents the human labels.
    - Results are computed per check, with the sample size.
 7. **Ship** (`ai-ship`):
    - The launch bar per check, and where human review stays.
@@ -204,9 +224,24 @@ As in `analytics`:
   not its folder exists yet (the rule project 5's review added).
 - **Compute with code.** `ai` joins `COMPUTE_PLUGINS` and its validator mirror.
 - **Labels.** Every number is labelled `computed`, `not measured` or `target`.
-- **Aggregates only.** Scripts read the team's outputs and logs where the team
-  keeps them, and write only aggregates under `.singularskills/`. Quoted
-  outputs replace personal data with placeholders.
+- **Aggregates and redacted rows.** Scripts read the team's outputs and logs
+  where the team keeps them, and write aggregates under `.singularskills/`.
+  Three artifacts are row-level by nature: the per-output notes of
+  `06-evaluate.md`, the disagreements of `ai-judge-check`, and the test inputs
+  of `ai-red-team`. These may list a row number (or the team's output ID) with
+  a short quote, but personal data (names, emails, phone numbers, account
+  IDs) is always replaced with placeholders. *(Builder-check answer,
+  controller's call.)*
+- **Re-runs keep the evidence.** Re-running Evaluate (after a "fix" decision,
+  or on a prompt or model change) or Monitor's monthly review first keeps the
+  previous file as `06-evaluate-<date>.md` or `08-monitor-<date>.md`, then
+  writes the new one. A Ship "fix" decision tells the user which phase to
+  re-run (3 or 5) and does not move the run log itself. *(Builder-check
+  answer, controller's call.)*
+- **No disclaimer group and no edits to other domains.** `ai` joins no
+  disclaimer group. The neighbouring skills are left as they are, and the
+  `ai` skills carry the `Not for …` lines. *(Builder-check answer, controller's
+  call.)*
 - **Cross-domain reads.** `ai` joins `CROSS_DOMAIN_READS` with `["research",
   "support", "analytics", "development", "compliance"]`.
 
@@ -297,9 +332,10 @@ checks. In the root `meta.json`, `ai` goes after `analytics`.
      written, and the gate passes. Phase 1 includes a "should this be AI at
      all" check. Phase 5 hands off to `/development-plan`.
   2. Phase 6 on 100 synthetic outputs with a seeded mix of failures (made-up
-     policies, wrong tone, a leaked email address). The failure groups are
-     counted with a script, and no personal data from the outputs appears in
-     any file.
+     policies, wrong tone, a leaked email address), run with "I won't be
+     around". The proposed groups find the seeded failures and are counted with
+     a script. They are marked **proposed**, with no checks built from them.
+     Personal data is redacted in every file.
   3. Phase 7 before phase 6 exists: the gate stops it.
   4. `/ai-red-team` names indirect prompt injection through retrieved
      documents for a retrieval feature.
