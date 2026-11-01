@@ -6,7 +6,8 @@ saved on 2026-10-31. The owner skipped the brainstorm questions on 2026-11-01
 and asked for research through Consensus, Context7 and web search. Every
 decision below is the controller's call unless marked *(owner)*, made from
 that research (§6), the existing skills it must not duplicate, and the
-patterns of the earlier domains.
+patterns of the earlier domains. A builder check on 2026-11-01 raised two
+questions; their answers are marked *(builder-check answer, controller's call)*.
 
 ## 1. Intent
 
@@ -75,11 +76,22 @@ a dedicated SRE. *(Controller's call.)*
 - **Tool-neutral documents.** No monitoring, paging or cloud tool binding, no
   network calls, and **no command run against any system**. Skills write
   SLOs, alert rules, runbooks and reviews for people to apply.
-- **Stack-aware.** Where the skills write commands or alert rules, they follow
-  the project's declared `Stack` (`metadata.stack-aware: true` on inventory,
-  alerting, runbooks and change review). Alert rules are written in the
-  monitoring syntax the stack names (PromQL, Datadog, CloudWatch), or as
-  plain conditions when none is declared.
+- **Stack-aware, without changing the Stack schema.** Inventory, alerting,
+  runbooks and change review carry `metadata.stack-aware: true`, so they read
+  the project's `Stack` section for build, run and deploy commands. The
+  monitoring, paging and deploy tools are not Stack keys and none are added:
+  that would rewrite the stack paragraph in every stack-aware skill and touch
+  other domains.
+  - **Inventory records them** in a **Tooling** section of `01-inventory.md`
+    (monitoring and query language, paging, deploy and rollback, infrastructure
+    tooling), taken from the Stack section's free text when it names them,
+    otherwise asked once. Each tool is marked known or unknown.
+  - **Alerting, runbooks and change review read `01-inventory.md`.** Rules
+    are written in the recorded query language (PromQL, Datadog, CloudWatch).
+    Runbook commands use the recorded tools. With a tool unknown, rules are
+    written as plain conditions and runbook steps in plain language marked
+    **command to fill in**; a command is never invented.
+  *(Builder-check answer, controller's call.)*
 - `workflows/ops.yml`, two references in `references/ops/`, docs, sidebar,
   `lib/domains.ts`, homepage bento (§7), and totals: 327 → **338 skills**,
   20 → **21 domains**, 21 → **22** eval cases, 23 → **24** workflows.
@@ -143,7 +155,10 @@ so artifacts go in `.singularskills/ops/<project>/`. The methodology name is
      could take it down;
    - a criticality tier per service;
    - the current monitoring, alerting, on-call and deploy state, each item
-     marked known or unknown.
+     marked known or unknown;
+   - a **Tooling** section: monitoring and its query language, paging, deploy
+     and rollback, and infrastructure tools, which phases 3 and 4 and the
+     change review read.
 2. **SLOs** (`ops-slos`):
    - per critical user journey, an SLI defined as good events ÷ valid events
      (availability, latency at a percentile, correctness or freshness, as
@@ -210,6 +225,10 @@ so artifacts go in `.singularskills/ops/<project>/`. The methodology name is
     `/security-incident-response`.
   - Writes `.singularskills/ops/<project>/incidents/<date>-<slug>.md`.
   - Not for project post-mortems; see `/project-management-post-mortem`.
+  - Its description says "production outage or incident … postmortem", so a
+    request about a production incident routes here, even though
+    `/project-management-post-mortem` (not edited, per §4) also mentions
+    outages. *(Builder-check answer, controller's call.)*
 - **`ops-incident-response`**:
   - Guidance during a live incident: declare and set severity, assign roles,
     the first five actions (stabilise before diagnosing, check recent changes
@@ -338,8 +357,10 @@ unused. In the root `meta.json`, `ops` goes after `development`.
     - the alert fired 12 minutes after errors began;
     - the rollback runbook was out of date.
   - The prompt, from a manager: "Dave ran the wrong migration on prod and
-    took us down for 40 minutes. Write up the postmortem so we make sure he
-    doesn't do it again."
+    took us down for 40 minutes. Write up the incident review so we make sure
+    he doesn't do it again." It says "incident review" so that routing points
+    here rather than at the project post-mortem skill. If the skill still
+    does not fire, the run is recorded with its grader results.
   - Graders:
     - the skill fired;
     - the review does not name the engineer as the cause and does not make
@@ -350,8 +371,9 @@ unused. In the root `meta.json`, `ops` goes after `development`.
     - it refers to the engineer by role.
 - **Acceptance runs** in a scratch project with synthetic data, recorded in
   `docs/superpowers/plans/<plan>-acceptance.md`:
-  1. Phases 1–5 for a synthetic "checkout" service with a declared stack
-     (Prometheus in the `Stack` section).
+  1. Phases 1–5 for a synthetic "checkout" service whose `AGENTS.md` Stack
+     section names Prometheus and kubectl in its `rules`. The inventory
+     records them under Tooling.
      - SLOs have a computed budget and a draft policy.
      - The alerts are burn-rate PromQL with page and ticket set, and every
        page links to a runbook.
@@ -368,6 +390,8 @@ unused. In the root `meta.json`, `ops` goes after `development`.
      system factors.
   6. `/ops-error-budget` for 99.9% over 30 days: 43.2 minutes of budget, and
      the 14.4×, 6× and 1× thresholds.
+  7. Phase 4 for a service with no tooling recorded: steps in plain language
+     marked **command to fill in**, with no invented commands.
 
 ## 10. Left to the builder
 
