@@ -85,6 +85,12 @@
 			"hasEvals": true
 		},
 		{
+			"slug": "ops",
+			"name": "ops",
+			"skills": 11,
+			"hasEvals": true
+		},
+		{
 			"slug": "project-management",
 			"name": "project-management",
 			"skills": 32,
@@ -208,6 +214,11 @@
 			"phases": 10
 		},
 		{
+			"name": "ops",
+			"title": "Reliability Cycle",
+			"phases": 6
+		},
+		{
 			"name": "project-management",
 			"title": "Scrum",
 			"phases": 5
@@ -239,9 +250,9 @@
 		}
 	],
 	"totals": {
-		"skills": 327,
-		"plugins": 20,
-		"evalSuites": 20,
+		"skills": 338,
+		"plugins": 21,
+		"evalSuites": 21,
 		"agents": 7
 	}
 }

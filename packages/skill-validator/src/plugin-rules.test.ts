@@ -289,6 +289,15 @@ describe("artifact-root", () => {
 		).toEqual(["artifact-root"]);
 	});
 
+	it("lets ops skills read development, security, support and analytics only", () => {
+		const reads =
+			"Read `.singularskills/development/<p>/`, `.singularskills/security/<p>/`, `.singularskills/support/<p>/` and `.singularskills/analytics/<p>/`.";
+		expect(rules(runAs("ops-incident-review", reads))).not.toContain("artifact-root");
+		expect(rules(runAs("ops-incident-review", "Read `.singularskills/legal/<p>/x.md`."))).toContain(
+			"artifact-root",
+		);
+	});
+
 	it("lets sales skills read marketing, legal, research and support only", () => {
 		const reads =
 			"Read `.singularskills/marketing/<p>/`, `.singularskills/legal/<p>/`, `.singularskills/research/<p>/` and `.singularskills/support/<p>/`.";
@@ -925,6 +934,7 @@ describe("compute-with-code-present", () => {
 			"analytics",
 			"bookkeeping",
 			"finance",
+			"ops",
 			"sales",
 			"support",
 		]);
@@ -941,6 +951,12 @@ describe("compute-with-code-present", () => {
 	it("names every computing domain in its message", () => {
 		const [issue] = runAs("support-reply", "# X\n\n## Output\n\n- Reply\n");
 		for (const domain of COMPUTE_WITH_CODE_PLUGINS) expect(issue.message).toContain(domain);
+	});
+
+	it("flags an ops skill without the paragraph", () => {
+		expect(rules(runAs("ops-error-budget", "# X\n\n## Output\n\n- Budget\n"))).toEqual([
+			"compute-with-code-present",
+		]);
 	});
 
 	it("flags a sales skill without the paragraph", () => {

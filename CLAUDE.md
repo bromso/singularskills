@@ -1,6 +1,6 @@
 # singularskills
 
-One pack of Agent Skills: 327 skills across 20 domains, ordered into gated workflows. Read [AGENTS.md](AGENTS.md) first: it covers the layout, how a skill, a workflow file and a gate relate, and the checks.
+One pack of Agent Skills: 338 skills across 21 domains, ordered into gated workflows. Read [AGENTS.md](AGENTS.md) first: it covers the layout, how a skill, a workflow file and a gate relate, and the checks.
 
 ## Commands
 

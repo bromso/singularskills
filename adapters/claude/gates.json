@@ -81,6 +81,13 @@
 		"03": ["00-strategy.md"],
 		"04": ["00-strategy.md"]
 	},
+	"ops": {
+		"02": ["01-inventory.md"],
+		"03": ["02-slos.md"],
+		"04": ["03-alerting.md"],
+		"05": ["03-alerting.md", "04-runbooks.md"],
+		"06": ["02-slos.md"]
+	},
 	"project-management": {
 		"01": ["00-initiate.md"],
 		"02": ["00-initiate.md"],

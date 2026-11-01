@@ -1,0 +1,2 @@
+description = "Audit a service's alerts from an export — firings and actionable ratio per alert over the period, computed — and decide for each whether to keep, tune, demote to a ticket or delete, flagging pages with no runbook and pages per shift over the target. Use when on-call is noisy and the team wants fewer, better alerts. Not for designing alerting from scratch; see /ops-alerting."
+prompt = "Use the ops-alert-audit skill with these arguments: {{args}}"

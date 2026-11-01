@@ -1,0 +1,32 @@
+---
+title: Storage
+description: How Operations artifacts are organized in the .singularskills/ directory.
+kind: overview
+---
+
+## Directory Structure
+
+```
+.singularskills/ops/<project>/
+  01-inventory.md
+  02-slos.md
+  03-alerting.md
+  04-runbooks.md
+  05-on-call.md
+  06-review.md
+  06-review-<date>.md      ← earlier reviews, kept on re-run
+  incidents/
+  alerts/
+```
+
+Scripts the skills write to compute budgets, burn rates and alert ratios sit beside the files. Your metric exports and logs stay wherever you keep them.
+
+## File Naming Convention
+
+Phase files use a numbered prefix (`01-` through `06-`). Incident reviews and alert audits are named `<date>-<slug>.md`, where the slug names the incident or topic, never a person.
+
+## Accessing Artifacts
+
+1. The tooling every rule and runbook is written for is in the Tooling section of `01-inventory.md`
+2. The error budget policy is in `02-slos.md`
+3. Runbook names in `03-alerting.md` match the sections of `04-runbooks.md`

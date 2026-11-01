@@ -1,0 +1,47 @@
+---
+title: Examples
+description: End-to-end walkthrough of making a checkout service reliable.
+kind: overview
+---
+
+## Scenario: The Checkout Service
+
+Your team runs a checkout service on Kubernetes, monitored with Prometheus. It pages on CPU above 80%, the pages are ignored, and last month an outage was reported by a customer before any alert fired.
+
+### Phase 1: Inventory
+
+```
+/ops-service-inventory checkout
+```
+
+**Sample output snippet:**
+> **Tier 1:** checkout (journey: pay for a basket). **Depends on:** orders database, payment provider.
+> **Tooling:** Prometheus and PromQL (known, from the Stack section), kubectl (known), paging tool (unknown).
+
+### Phase 2: SLOs
+
+```
+/ops-slos checkout
+```
+
+> **SLO:** 99.9% of checkout requests succeed over 30 days. **Budget (computed):** 43.2 minutes. **Policy (draft):** freeze all but P0 and security fixes once the budget is spent.
+
+### Phases 3–5
+
+```
+/ops-alerting checkout
+/ops-runbooks checkout
+/ops-on-call checkout
+```
+
+> **Page:** error rate above 1.44% over 1 hour and 5 minutes (14.4× burn), runbook "Checkout failing". **Deleted:** CPU > 80%, never acted on.
+> **Runbook step 2 — changes production:** `kubectl rollout undo deployment/checkout` — expected: rollout status "successfully rolled out"; impact: about 60 seconds of mixed versions.
+
+### Phase 6 and after an incident
+
+```
+/ops-reliability-review checkout
+/ops-incident-review checkout
+```
+
+> **Contributing factor:** the deploy tool used the same command for staging and prod with no confirmation. **Action item (platform team):** require an explicit confirmation for prod migrations.

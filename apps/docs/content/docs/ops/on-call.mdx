@@ -1,0 +1,47 @@
+---
+title: "Phase 5: On-call"
+description: Set up the rotation, handoffs, severities, roles, escalation and load limits.
+command: "/ops-on-call <project>"
+kind: phase
+---
+
+## Purpose
+
+The On-call phase makes sure pages get answered and the people answering them stay well.
+
+## Usage
+
+**Example:**
+```
+/ops-on-call checkout
+```
+
+## Prerequisites
+
+Requires `.singularskills/ops/<project>/03-alerting.md` and `04-runbooks.md`. Use `--skip-checks` to bypass.
+
+## What It Does
+
+<Steps>
+<Step>Sets the rotation and swaps</Step>
+<Step>Writes the handoff checklist</Step>
+<Step>Defines severities, roles and escalation</Step>
+<Step>Sets load limits and recovery time</Step>
+</Steps>
+
+## Output
+
+<Output>
+Creates `.singularskills/ops/<project>/05-on-call.md` containing:
+
+- Rotation
+- Handoff checklist
+- Severities
+- Roles
+- Escalation
+- Load limits
+</Output>
+
+## Next Phase
+
+<NextPhase href="/docs/ops/reliability-review" title="Review">After On-call, continue with Review.</NextPhase>

@@ -1,0 +1,6 @@
+---
+description: "Assess the deploy risk of one production change — what it touches and its blast radius, the error budget status of the affected SLOs, the rollback and how long it takes, whether a flag or staged rollout is possible, and what to watch, ending in go, go with conditions or wait. Use when a team is about to ship a risky change to production. Not for reviewing the code itself; see /development-review."
+argument-hint: "[project] <change>"
+---
+
+Use the `ops-change-review` skill with these arguments: $ARGUMENTS

@@ -1,0 +1,37 @@
+---
+title: Change Review
+description: Assess the deploy risk of one production change.
+command: "/ops-change-review [project] <change>"
+kind: utility
+---
+
+## Purpose
+
+The Change Review skill weighs blast radius, the error budget, the rollback and how to reduce risk, ending in go, go with conditions or wait. Not for code review; see `/development-review`.
+
+## Usage
+
+**Example:**
+```
+/ops-change-review [project] <change>
+```
+
+## Prerequisites
+
+The change; the inventory, SLOs and latest review when they exist.
+
+## What It Does
+
+<Steps>
+<Step>Maps what it touches and its blast radius</Step>
+<Step>Checks the budget and the policy</Step>
+<Step>Writes the rollback, marking production steps</Step>
+<Step>Suggests flags or staged rollout</Step>
+<Step>Makes the call</Step>
+</Steps>
+
+## Output
+
+<Output>
+Returns the call in chat. Writes no file.
+</Output>

@@ -1,0 +1,46 @@
+---
+title: "Phase 2: SLOs"
+description: Define SLIs, SLO targets, error budgets and an error budget policy.
+command: "/ops-slos <project>"
+kind: phase
+---
+
+## Purpose
+
+The SLOs phase decides how reliable each critical journey must be, and what the team does when the budget is spent.
+
+## Usage
+
+**Example:**
+```
+/ops-slos checkout
+```
+
+## Prerequisites
+
+Requires `.singularskills/ops/<project>/01-inventory.md`. Use `--skip-checks` to bypass.
+
+## What It Does
+
+<Steps>
+<Step>Defines an SLI per journey as good events ÷ valid events</Step>
+<Step>Sets the target and window</Step>
+<Step>Computes the error budget</Step>
+<Step>Writes the error budget policy as a draft until it is agreed</Step>
+</Steps>
+
+## Output
+
+<Output>
+Creates `.singularskills/ops/<project>/02-slos.md` containing:
+
+- SLIs
+- SLOs
+- Error budgets
+- Error budget policy
+- Current attainment
+</Output>
+
+## Next Phase
+
+<NextPhase href="/docs/ops/alerting" title="Alerting">After SLOs, continue with Alerting.</NextPhase>

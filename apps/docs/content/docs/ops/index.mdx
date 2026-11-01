@@ -1,0 +1,61 @@
+---
+title: Operations Domain Overview
+description: A six-phase reliability cycle for each service, from what you run to how reliable it was.
+kind: overview
+---
+
+The Operations domain helps a team run its production services: inventory, SLOs with an error budget policy, alerting, runbooks, on-call and a regular reliability review. Each phase writes a numbered file to `.singularskills/ops/<project>/` with the decisions made and the questions still open. Five utilities write a blameless incident review, guide a live incident, audit alerts, calculate an error budget, and review a risky change.
+
+No skill ever runs a command against a live system or claims to have tested one: they write SLOs, rules, runbooks and reviews for people to apply. Alert rules and runbook commands follow the tooling recorded in the inventory; with a tool unknown, they say **command to fill in** rather than inventing one. Every number is `computed` from your data, `not measured`, or a `target`.
+
+## Operations Phases
+
+| Phase | Command | Purpose |
+|-------|---------|---------|
+| Inventory | `/ops-service-inventory` | Services, journeys, dependencies, tiers, tooling |
+| SLOs | `/ops-slos` | SLIs, targets, error budgets and the policy |
+| Alerting | `/ops-alerting` | Burn-rate alerts, page or ticket, a runbook per page |
+| Runbooks | `/ops-runbooks` | Checklists with production-changing steps marked |
+| On-call | `/ops-on-call` | Rotation, handoffs, severities, roles, load limits |
+| Review | `/ops-reliability-review` | Attainment, budget, alerts, pages, follow-up |
+
+## Utility Skills
+
+| Skill | Command | Purpose |
+|-------|---------|---------|
+| Incident Review | `/ops-incident-review` | Blameless review of one incident |
+| Incident Response | `/ops-incident-response` | What to do during a live incident |
+| Alert Audit | `/ops-alert-audit` | Keep, tune, demote or delete each alert |
+| Error Budget | `/ops-error-budget` | Budget and burn-rate thresholds |
+| Change Review | `/ops-change-review` | Go, go with conditions, or wait |
+
+## Artifact Flow
+
+```
+.singularskills/ops/checkout/
+  01-inventory.md
+  02-slos.md
+  03-alerting.md
+  04-runbooks.md
+  05-on-call.md
+  06-review.md
+  incidents/          ← incident reviews
+  alerts/             ← alert audits
+```
+
+## What the Research Says
+
+- Alert on SLO burn rate in multiple windows; page at 14.4× over an hour and 6× over six hours, ticket at 1× over three days (Google SRE Workbook).
+- Repeated non-actionable alarms desensitise responders and are linked to burnout.
+- Blameless reviews find systemic contributing factors; single-cause "root cause" thinking hides them, and lessons fail to stick without a structured process.
+
+## Cross-Domain Integration
+
+- **Development** builds and ships; the change review reads its practice.
+- **Security** owns security monitoring and breach response; the incident skills hand over when it may be a breach.
+- **Support** writes customer-facing incident updates (`/support-incident-update`).
+- **Project management** owns project post-mortems.
+
+## Skills in this domain
+
+<DomainGrid domain="ops" />

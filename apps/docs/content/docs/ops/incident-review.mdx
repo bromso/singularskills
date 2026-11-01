@@ -1,0 +1,37 @@
+---
+title: Incident Review
+description: Write a blameless review of a production incident.
+command: "/ops-incident-review [project] [incident]"
+kind: utility
+---
+
+## Purpose
+
+The Incident Review skill finds what in the system let an incident happen. People appear by role, never by name; there are several contributing factors, not one root cause; and action items change the system. Not for project post-mortems; see `/project-management-post-mortem`.
+
+## Usage
+
+**Example:**
+```
+/ops-incident-review [project] [incident]
+```
+
+## Prerequisites
+
+The timeline, chat log, alerts and notes.
+
+## What It Does
+
+<Steps>
+<Step>Checks it is not a security incident</Step>
+<Step>Rewrites people to roles</Step>
+<Step>Computes impact from the record</Step>
+<Step>Lists contributing factors and where the system misled the responders</Step>
+<Step>Writes action items on the system, with owners</Step>
+</Steps>
+
+## Output
+
+<Output>
+Creates `.singularskills/ops/<project>/incidents/<date>-<slug>.md`.
+</Output>
