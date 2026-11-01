@@ -1,0 +1,36 @@
+---
+title: Storage
+description: How AI Product artifacts are organized in the .singularskills/ directory.
+kind: overview
+---
+
+## Directory Structure
+
+```
+.singularskills/ai/<project>/
+  01-define.md
+  02-approach.md
+  03-prompt.md
+  04-experience.md
+  05-build.md
+  06-evaluate.md
+  06-evaluate-<date>.md    ← earlier evaluations, kept on re-run
+  07-ship.md
+  08-monitor.md
+  08-monitor-<date>.md     ← earlier reviews, kept on re-run
+  red-team/
+  judges/
+```
+
+Scripts the skills write to count failure groups and compute rates sit beside the artifacts. Your outputs, logs and labels stay wherever you keep them.
+
+## File Naming Convention
+
+Phase artifacts use a numbered prefix (`01-` through `08-`). Utility artifacts are named `<date>-<slug>.md`, where the slug names the feature or check, never a person.
+
+## Accessing Artifacts
+
+1. The prompt version in production is in `03-prompt.md`
+2. The checks and their latest results are in `06-evaluate.md`
+3. The launch decision and where human review stays are in `07-ship.md`
+4. The development workflow's files for the same project are in `.singularskills/development/<project>/`

@@ -1,0 +1,36 @@
+---
+title: Red Team
+description: Plan attack tests for an AI feature, each with a safe response.
+command: "/ai-red-team <feature or project>"
+kind: utility
+---
+
+## Purpose
+
+The Red Team skill writes the attacks to try against the feature: direct and indirect prompt injection, jailbreaks, leakage, tool misuse. Not for a security testing programme; see `/security-security-testing`.
+
+## Usage
+
+**Example:**
+```
+/ai-red-team <feature or project>
+```
+
+## Prerequisites
+
+What the feature reads and what it can do; the approach and prompt artifacts when they exist.
+
+## What It Does
+
+<Steps>
+<Step>Maps every input the model reads and every tool it can call</Step>
+<Step>Writes attacks per category with a test input and the safe response</Step>
+<Step>Rates each by harm and ease</Step>
+<Step>Names the defence each attack tests</Step>
+</Steps>
+
+## Output
+
+<Output>
+Creates `.singularskills/ai/<project>/red-team/<date>-<slug>.md`.
+</Output>

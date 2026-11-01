@@ -1,0 +1,28 @@
+{
+	"title": "AI Product",
+	"description": "Design, build, evaluate, ship and monitor AI features in a product",
+	"icon": "Bot",
+	"root": true,
+	"pages": [
+		"index",
+		"---Phases---",
+		"define",
+		"approach",
+		"prompt-design",
+		"experience",
+		"build",
+		"evaluate",
+		"ship",
+		"monitor",
+		"---Memory---",
+		"artifacts",
+		"storage",
+		"---Examples---",
+		"examples",
+		"---Utilities---",
+		"prompt-review",
+		"red-team",
+		"judge-check",
+		"model-compare"
+	]
+}

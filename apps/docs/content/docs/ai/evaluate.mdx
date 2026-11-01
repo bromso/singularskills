@@ -1,0 +1,49 @@
+---
+title: "Phase 6: Evaluate"
+description: Error analysis on real outputs, confirmed by a person, then checks per failure group.
+command: "/ai-evaluate <project>"
+kind: phase
+---
+
+## Purpose
+
+The Evaluate phase finds out how the built feature behaves, from its real outputs. Claude does the first pass; a person confirms the failure groups before any check is built.
+
+## Usage
+
+**Example:**
+```
+/ai-evaluate helpbot
+```
+
+## Prerequisites
+
+Requires `.singularskills/ai/<project>/01-define.md` and `05-build.md`. Use `--skip-checks` to bypass.
+
+## What It Does
+
+<Steps>
+<Step>Reads about 100 real outputs, or uses the team's own notes</Step>
+<Step>Proposes failure groups and counts them with a script</Step>
+<Step>Stops for a person to confirm the groups; unconfirmed groups stay proposed</Step>
+<Step>Turns confirmed groups into plain checks or AI judges</Step>
+<Step>Validates judges against human labels with `/ai-judge-check`</Step>
+<Step>Writes `.singularskills/ai/<project>/06-evaluate.md`, keeping the previous one by date</Step>
+</Steps>
+
+## Output
+
+<Output>
+Creates `.singularskills/ai/<project>/06-evaluate.md` containing:
+
+- Outputs
+- Notes
+- Failure groups
+- Checks
+- Results
+- Fixes
+</Output>
+
+## Next Phase
+
+<NextPhase href="/docs/ai/ship" title="Ship">After Evaluate, continue with Ship.</NextPhase>

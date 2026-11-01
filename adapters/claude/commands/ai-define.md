@@ -1,0 +1,6 @@
+---
+description: "Define an AI feature — the job it does, for whom and when, whether AI is the right tool at all, success criteria a check could test, the failure modes that matter, and latency and cost budgets. Use when a product team wants to add an AI feature and has not yet pinned down what good looks like. Not for assessing AI regulation; see /compliance-eu-ai-act."
+argument-hint: "[project] [--skip-checks]"
+---
+
+Use the `ai-define` skill with these arguments: $ARGUMENTS

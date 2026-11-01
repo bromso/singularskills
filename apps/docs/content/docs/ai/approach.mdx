@@ -1,0 +1,47 @@
+---
+title: "Phase 2: Approach"
+description: Pick the simplest approach — prompt only, retrieval, tools or an agent — that meets the criteria.
+command: "/ai-approach <project>"
+kind: phase
+---
+
+## Purpose
+
+The Approach phase chooses how the feature works, starting from the simplest option and saying why each simpler one was not enough.
+
+## Usage
+
+**Example:**
+```
+/ai-approach helpbot
+```
+
+## Prerequisites
+
+Requires `.singularskills/ai/<project>/01-define.md`. Use `--skip-checks` to bypass.
+
+## What It Does
+
+<Steps>
+<Step>Lays out prompt only, retrieval, tool use and agent</Step>
+<Step>Tests each against the success criteria, failure modes and budgets</Step>
+<Step>Lists the content, tools and data the chosen approach needs</Step>
+<Step>Sets criteria for choosing a model from the team's shortlist</Step>
+<Step>Writes `.singularskills/ai/<project>/02-approach.md`</Step>
+</Steps>
+
+## Output
+
+<Output>
+Creates `.singularskills/ai/<project>/02-approach.md` containing:
+
+- Options
+- Chosen approach
+- Content, tools and data
+- Model criteria
+- Risks
+</Output>
+
+## Next Phase
+
+<NextPhase href="/docs/ai/prompt-design" title="Prompt and context">After Approach, continue with Prompt and context.</NextPhase>

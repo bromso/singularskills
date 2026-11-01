@@ -1,0 +1,62 @@
+---
+title: AI Product Domain Overview
+description: An eight-phase lifecycle for AI features in a product, from what the feature must do to knowing when it gets worse.
+kind: overview
+---
+
+The AI Product domain is for a product team adding an AI feature to its own product: a support chatbot, a document summariser, search over its own content. Its heart is designing and building the feature well; evaluation on real outputs is how the team knows it worked. Each phase writes a numbered file to `.singularskills/ai/<project>/` with the decisions made and the questions still open. Four utilities review a prompt, plan attack tests, check an AI judge against human labels, and compare models.
+
+The skills never run the feature or call a model. They work from the prompts, outputs, logs and labels you supply, and every number is labelled `computed` (with the script shown), `not measured` or `target`. Quotes from outputs have personal data replaced with placeholders.
+
+## AI Product Phases
+
+| Phase | Command | Purpose |
+|-------|---------|---------|
+| Define | `/ai-define` | The job, whether AI is the right tool, success criteria, failure modes, budgets |
+| Approach | `/ai-approach` | The simplest approach that meets the criteria |
+| Prompt and context | `/ai-prompt-design` | The prompt, context, refusal rules and injection defences |
+| Experience | `/ai-experience` | What users see when the AI is right, unsure, wrong or down |
+| Build | `/ai-build` | The build spec, handed to `/development-plan` |
+| Evaluate | `/ai-evaluate` | Error analysis on real outputs, then checks per failure group |
+| Ship | `/ai-ship` | Launch bar, human review, rollout, kill switch, decision |
+| Monitor | `/ai-monitor` | Logging, signals, monthly review, re-evaluation on change |
+
+## Utility Skills
+
+| Skill | Command | Purpose |
+|-------|---------|---------|
+| Prompt Review | `/ai-prompt-review` | Review and rewrite one prompt |
+| Red Team | `/ai-red-team` | Attack tests, each with a safe response |
+| Judge Check | `/ai-judge-check` | Whether an AI judge can be trusted |
+| Model Compare | `/ai-model-compare` | Pick a model from your own test results |
+
+## Artifact Flow
+
+```
+.singularskills/ai/helpbot/
+  01-define.md            ← Job, criteria, failure modes, budgets
+  02-approach.md          ← Chosen approach and why
+  03-prompt.md            ← Prompt, context, defences
+  04-experience.md        ← What users see
+  05-build.md             ← Build spec and hand-off
+  06-evaluate.md          ← Failure groups, checks, results
+  07-ship.md              ← Launch decision
+  08-monitor.md           ← Signals and the latest review
+  red-team/               ← Attack test plans
+  judges/                 ← Judge checks
+```
+
+## Who Reads the Outputs
+
+In Evaluate, Claude does the first pass: a note on each output and proposed failure groups with counts. A person who knows the domain confirms, merges or renames the groups before any check is built; until then they stay **proposed**. Claude never invents the human labels a judge is checked against.
+
+## Cross-Domain Integration
+
+- **Research**, **Support** and **Analytics** artifacts inform Define.
+- **Development** writes the code from the Build spec, under the same project name; Evaluate reads what it built.
+- **Compliance** covers the EU AI Act, NIST AI RMF and ISO 42001; Ship names which apply.
+- **Security** owns the wider security testing programme; Red Team covers attacks on the model.
+
+## Skills in this domain
+
+<DomainGrid domain="ai" />

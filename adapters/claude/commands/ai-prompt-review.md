@@ -1,0 +1,6 @@
+---
+description: "Review one prompt for an AI feature — unclear or conflicting instructions, missing context, gaps in the output format, missing refusal rules, and places where user input could override instructions — and return a rewritten version with the changes listed. Use when a team has a prompt and wants it checked before it ships. Not for designing a prompt from scratch; see /ai-prompt-design."
+argument-hint: "<prompt or file> [project]"
+---
+
+Use the `ai-prompt-review` skill with these arguments: $ARGUMENTS

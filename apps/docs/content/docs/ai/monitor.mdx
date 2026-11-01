@@ -1,0 +1,48 @@
+---
+title: "Phase 8: Monitor"
+description: "Know when the live feature gets worse: logging, signals, monthly review, re-evaluation on change."
+command: "/ai-monitor <project>"
+kind: phase
+---
+
+## Purpose
+
+The Monitor phase sets up how the team will know when the live feature gets worse, and runs the regular review.
+
+## Usage
+
+**Example:**
+```
+/ai-monitor helpbot
+```
+
+## Prerequisites
+
+Requires `.singularskills/ai/<project>/07-ship.md`. Use `--skip-checks` to bypass.
+
+## What It Does
+
+<Steps>
+<Step>Specifies what to log, with personal data handled</Step>
+<Step>Sets the signals and thresholds that call for a look</Step>
+<Step>Runs a fresh error analysis on recent outputs</Step>
+<Step>Requires re-evaluation on every prompt or model change</Step>
+<Step>Compares cost and latency with the budgets</Step>
+<Step>Writes `.singularskills/ai/<project>/08-monitor.md`, keeping the previous one by date</Step>
+</Steps>
+
+## Output
+
+<Output>
+Creates `.singularskills/ai/<project>/08-monitor.md` containing:
+
+- Logging
+- Signals
+- This review
+- Change rule
+- Cost and latency
+</Output>
+
+## Next Step
+
+Re-run Monitor monthly, and Evaluate after every prompt or model change.

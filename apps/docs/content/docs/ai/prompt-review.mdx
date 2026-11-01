@@ -1,0 +1,36 @@
+---
+title: Prompt Review
+description: Review one prompt and get a rewritten version with the changes listed.
+command: "/ai-prompt-review <prompt or file>"
+kind: utility
+---
+
+## Purpose
+
+The Prompt Review skill checks a prompt for unclear or conflicting instructions, missing context, format gaps and places where user input could override the instructions.
+
+## Usage
+
+**Example:**
+```
+/ai-prompt-review <prompt or file>
+```
+
+## Prerequisites
+
+The prompt, pasted or as a file.
+
+## What It Does
+
+<Steps>
+<Step>Restates the job the prompt is for</Step>
+<Step>Checks instructions, context, output format, refusal rules, untrusted input and examples</Step>
+<Step>Rewrites the prompt, changing only what a finding requires</Step>
+<Step>Lists each change and what to evaluate first</Step>
+</Steps>
+
+## Output
+
+<Output>
+Returns the findings, the rewritten prompt and the change list in chat. Writes no file.
+</Output>

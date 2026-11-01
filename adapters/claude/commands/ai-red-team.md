@@ -1,0 +1,6 @@
+---
+description: "Plan attack tests for an AI feature — direct and indirect prompt injection, jailbreaks, system-prompt and data leakage, tool misuse — each with a test input and what a safe response looks like. Use when a team wants to know how its AI feature could be misused before launch or after a change. Not for a security testing programme; see /security-security-testing."
+argument-hint: "<feature or project> [project]"
+---
+
+Use the `ai-red-team` skill with these arguments: $ARGUMENTS

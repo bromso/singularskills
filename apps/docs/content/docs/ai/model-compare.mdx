@@ -1,0 +1,36 @@
+---
+title: Model Compare
+description: Compare models on the team's own test results and recommend one.
+command: "/ai-model-compare <results file>"
+kind: utility
+---
+
+## Purpose
+
+The Model Compare skill compares models on pass rate per check, cost and latency from the team's own runs, never from benchmarks or prices remembered.
+
+## Usage
+
+**Example:**
+```
+/ai-model-compare <results file>
+```
+
+## Prerequisites
+
+Per model and test case: verdicts per check, cost and latency.
+
+## What It Does
+
+<Steps>
+<Step>Computes pass rate per check, cost and latency per model</Step>
+<Step>Flags differences too small to trust</Step>
+<Step>Compares against the budgets and the launch bar</Step>
+<Step>Recommends one, with the trade-off</Step>
+</Steps>
+
+## Output
+
+<Output>
+Returns the recommendation and comparison table in chat. Writes no file.
+</Output>

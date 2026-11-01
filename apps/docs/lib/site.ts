@@ -22,7 +22,7 @@ export function getDomains(): (Domain & { skills: number; hasEvals: boolean })[]
 	return [...rest, ...singular];
 }
 
-/** Cells occupied by each bento size at six columns (spec §4.4); sums to 30 across all 18 domains. */
+/** Cells occupied by each bento size at six columns (spec §4.4); sums to 30 across all 19 domains. */
 export const BENTO_CELLS: Record<Domain["bento"]["size"], number> = {
 	wide: 6,
 	half: 2,

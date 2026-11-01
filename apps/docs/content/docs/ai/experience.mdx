@@ -1,0 +1,50 @@
+---
+title: "Phase 4: Experience"
+description: Design what users see when the AI is right, unsure, wrong, slow or down.
+command: "/ai-experience <project>"
+kind: phase
+---
+
+## Purpose
+
+The Experience phase designs how the feature behaves for its users: disclosure, sources, uncertainty, correction, fallback and feedback.
+
+## Usage
+
+**Example:**
+```
+/ai-experience helpbot
+```
+
+## Prerequisites
+
+Requires `.singularskills/ai/<project>/01-define.md` and `02-approach.md`. Use `--skip-checks` to bypass.
+
+## What It Does
+
+<Steps>
+<Step>Decides how users learn they are dealing with AI</Step>
+<Step>Shows sources and uncertainty</Step>
+<Step>Lets users correct, edit or undo</Step>
+<Step>Defines the fallback to a person or a non-AI path</Step>
+<Step>Captures feedback for evaluation</Step>
+<Step>Writes `.singularskills/ai/<project>/04-experience.md`</Step>
+</Steps>
+
+## Output
+
+<Output>
+Creates `.singularskills/ai/<project>/04-experience.md` containing:
+
+- Disclosure
+- Sources
+- Uncertainty
+- Correction and undo
+- Fallback
+- Feedback
+- Slow and down
+</Output>
+
+## Next Phase
+
+<NextPhase href="/docs/ai/build" title="Build">After Experience, continue with Build.</NextPhase>

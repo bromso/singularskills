@@ -289,6 +289,15 @@ describe("artifact-root", () => {
 		).toEqual(["artifact-root"]);
 	});
 
+	it("lets ai skills read research, support, analytics, development and compliance only", () => {
+		const reads =
+			"Read `.singularskills/research/<p>/`, `.singularskills/support/<p>/`, `.singularskills/analytics/<p>/`, `.singularskills/development/<p>/` and `.singularskills/compliance/<p>/`.";
+		expect(rules(runAs("ai-red-team", reads))).not.toContain("artifact-root");
+		expect(rules(runAs("ai-red-team", "Read `.singularskills/legal/<p>/x.md`."))).toContain(
+			"artifact-root",
+		);
+	});
+
 	it("lets analytics skills read research, marketing, finance and support only", () => {
 		const reads =
 			"Read `.singularskills/research/<p>/`, `.singularskills/marketing/<p>/`, `.singularskills/finance/<p>/` and `.singularskills/support/<p>/`.";
@@ -900,6 +909,7 @@ describe("compute-with-code-present", () => {
 		);
 		expect([...COMPUTE_WITH_CODE_PLUGINS].sort()).toEqual([
 			"accounting",
+			"ai",
 			"analytics",
 			"bookkeeping",
 			"finance",
@@ -918,6 +928,12 @@ describe("compute-with-code-present", () => {
 	it("names every computing domain in its message", () => {
 		const [issue] = runAs("support-reply", "# X\n\n## Output\n\n- Reply\n");
 		for (const domain of COMPUTE_WITH_CODE_PLUGINS) expect(issue.message).toContain(domain);
+	});
+
+	it("flags an ai skill without the paragraph", () => {
+		expect(rules(runAs("ai-prompt-review", "# X\n\n## Output\n\n- Review\n"))).toEqual([
+			"compute-with-code-present",
+		]);
 	});
 
 	it("flags an analytics skill without the paragraph", () => {

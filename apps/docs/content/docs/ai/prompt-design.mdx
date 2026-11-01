@@ -1,0 +1,49 @@
+---
+title: "Phase 3: Prompt and context"
+description: Design the prompt, the context per request, refusal rules and injection defences.
+command: "/ai-prompt-design <project>"
+kind: phase
+---
+
+## Purpose
+
+The Prompt and context phase writes what the model is told and given, with untrusted input kept apart from instructions and the prompt versioned like code.
+
+## Usage
+
+**Example:**
+```
+/ai-prompt-design helpbot
+```
+
+## Prerequisites
+
+Requires `.singularskills/ai/<project>/01-define.md` and `02-approach.md`. Use `--skip-checks` to bypass.
+
+## What It Does
+
+<Steps>
+<Step>Drafts the system prompt with its version</Step>
+<Step>Designs context assembly, marking untrusted input as data</Step>
+<Step>Adds examples, refusal and uncertainty rules</Step>
+<Step>Defends against direct and indirect (retrieved) prompt injection</Step>
+<Step>Maps each failure mode to what addresses it</Step>
+<Step>Writes `.singularskills/ai/<project>/03-prompt.md`</Step>
+</Steps>
+
+## Output
+
+<Output>
+Creates `.singularskills/ai/<project>/03-prompt.md` containing:
+
+- System prompt
+- Context assembly
+- Examples
+- Refusal and uncertainty
+- Injection defences
+- Failure-mode coverage
+</Output>
+
+## Next Phase
+
+<NextPhase href="/docs/ai/experience" title="Experience">After Prompt and context, continue with Experience.</NextPhase>

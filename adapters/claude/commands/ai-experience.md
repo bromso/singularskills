@@ -1,0 +1,6 @@
+---
+description: "Design how an AI feature behaves for its users — saying it is AI, showing sources and uncertainty, letting users correct or undo it, falling back to a person or a non-AI path, collecting feedback, and handling slow or failed responses. Use when the team must decide what users see when the AI is right, unsure or wrong. Not for designing a UI component; see /design-define-component."
+argument-hint: "[project] [--skip-checks]"
+---
+
+Use the `ai-experience` skill with these arguments: $ARGUMENTS

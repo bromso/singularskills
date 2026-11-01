@@ -1,0 +1,49 @@
+---
+title: "Phase 5: Build"
+description: Write the build spec and hand it to the development workflow.
+command: "/ai-build <project>"
+kind: phase
+---
+
+## Purpose
+
+The Build phase turns the designs into a build spec. It does not write code: the development workflow implements it under the same project name.
+
+## Usage
+
+**Example:**
+```
+/ai-build helpbot
+```
+
+## Prerequisites
+
+Requires `.singularskills/ai/<project>/03-prompt.md` and `04-experience.md`. Use `--skip-checks` to bypass.
+
+## What It Does
+
+<Steps>
+<Step>Lists the components on the request path</Step>
+<Step>Specifies versioned prompt files, retrieval or tools, configuration and logging</Step>
+<Step>Writes the initial test set from the failure modes</Step>
+<Step>Hands off to `/development-plan` and `/development-build`</Step>
+<Step>Writes `.singularskills/ai/<project>/05-build.md`</Step>
+</Steps>
+
+## Output
+
+<Output>
+Creates `.singularskills/ai/<project>/05-build.md` containing:
+
+- Components
+- Prompt files
+- Retrieval or tools
+- Configuration
+- Logging
+- Initial test set
+- Hand-off
+</Output>
+
+## Next Phase
+
+<NextPhase href="/docs/ai/evaluate" title="Evaluate">After Build, continue with Evaluate.</NextPhase>
